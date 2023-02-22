@@ -320,17 +320,45 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
   height: 240px;
   border-radius: 20px;
   overflow: hidden;
+  position: relative;
 }
 .services .services_grid .service_card .img img {
+  transition: 0.5s ease-in-out;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
+.services .services_grid .service_card .img .img_layer {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 50px;
+  opacity: 0;
+  transition: all 0.8s ease-in-out;
+}
+.services .services_grid .service_card .img .img_layer p {
+  text-align: center;
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 35px;
+}
 .services .services_grid .service_card pre {
   text-align: center;
   color: #ffffff;
   font-size: 18px;
+}
+.services .services_grid .service_card:hover .img img {
+  transform: scale(1.1);
+}
+.services .services_grid .service_card:hover .img .img_layer {
+  opacity: 1;
 }
 
 .ask_service {
@@ -505,6 +533,34 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
   flex-direction: column;
   width: 50%;
 }
+.employ_form form .file_feild {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e6e6e6;
+  position: relative;
+}
+.employ_form form .file_feild p {
+  font-size: 16px;
+  color: #4c4c4c;
+}
+.employ_form form .file_feild span {
+  width: 80px;
+  height: 25px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: none;
+  background: none;
+  outline: none;
+  background-color: #cccccc;
+}
 .employ_form form input,
 .employ_form form textarea {
   height: 50px;
@@ -515,11 +571,19 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
   outline: none;
   background-color: #e6e6e6;
   font-size: 16px;
+  color: #4c4c4c;
+}
+.employ_form form input::-moz-placeholder, .employ_form form textarea::-moz-placeholder {
+  color: #4c4c4c;
+}
+.employ_form form input::placeholder,
+.employ_form form textarea::placeholder {
+  color: #4c4c4c;
 }
 .employ_form form textarea {
   height: 100px;
 }
-.employ_form form button {
+.employ_form form button[type=submit] {
   background: linear-gradient(269.48deg, #f1b048 0%, #a36709 100%);
   border: none;
   outline: none;
@@ -528,6 +592,12 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
   font-size: 20px;
   cursor: pointer;
   color: #ffffff;
+}
+.employ_form form .file_in {
+  width: 230px;
+  height: 40px;
+  cursor: pointer;
+  direction: rtl;
 }
 
 /*******employ-end*****/

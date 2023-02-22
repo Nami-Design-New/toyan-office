@@ -332,16 +332,44 @@ header {
         height: 240px;
         border-radius: 20px;
         overflow: hidden;
+        position: relative;
         img {
+          transition: .5s ease-in-out;
           width: 100%;
           height: 100%;
           object-fit: cover;
+        }
+        .img_layer {
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.7);
+          position: absolute;
+          top: 0;
+          left: 0;
+          @include centerFlex();
+          padding: 0 50px;
+          opacity: 0;
+          transition: all .8s ease-in-out;
+          p {
+            text-align: center;
+            font-size: 16px;
+            color: $white;
+            line-height: 35px;
+          }
         }
       }
       pre {
         text-align: center;
         color: $white;
         font-size: 18px;
+      }
+      &:hover {
+        .img img {
+          transform: scale(1.1);
+        }
+        .img .img_layer {
+          opacity: 1;
+        }
       }
     }
   }
@@ -490,6 +518,30 @@ header {
     gap: 20px;
     flex-direction: column;
     width: 50%;
+    .file_feild {
+      width: 100%;
+      height: 50px;
+      border-radius: 10px;
+      padding: 0 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $gray0;
+      position: relative;
+      p {
+        font-size: 16px;
+        color: $gray2;
+      }
+      span {
+        width: 80px;
+        height: 25px;
+        font-size: 10px;
+        @include centerFlex();
+        flex-direction: column;
+        @include clearInput();
+        background-color: #cccccc;
+      }
+    }
     input,
     textarea {
       height: 50px;
@@ -498,11 +550,15 @@ header {
       @include clearInput();
       background-color: $gray0;
       font-size: 16px;
+      color: $gray2;
+      &::placeholder {
+        color: $gray2;
+      }
     }
     textarea {
       height: 100px;
     }
-    button {
+    button[type="submit"] {
       background: linear-gradient(269.48deg, #f1b048 0%, #a36709 100%);
       border: none;
       outline: none;
@@ -511,6 +567,12 @@ header {
       font-size: 20px;
       cursor: pointer;
       color: #ffffff;
+    }
+    .file_in {
+      width: 230px;
+      height: 40px;
+      cursor: pointer;
+      direction: rtl;
     }
   }
 }

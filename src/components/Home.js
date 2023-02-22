@@ -127,42 +127,79 @@ const Home = () => {
           <Link to="/services/feasibility-study" className="service_card">
             <div className="img">
               <img loading="lazy" src={img2} alt="feasibility-study" />
+              <div className="img_layer">
+                <p>نسعـى لتقديم دراسات جدوى تفصيلية تدعم نجاح مشروعك.</p>
+              </div>
             </div>
             <pre>دراسة جدوى اقتصادية</pre>
           </Link>
           <Link to="/services/legal-advices" className="service_card">
             <div className="img">
               <img loading="lazy" src={img3} alt="legal-advices" />
+              <div className="img_layer">
+                <p>
+                  نقدم لكم كافة أنواع الاستشارات القانونية المتعلقة بشئون
+                  المؤسسات والشركات.
+                </p>
+              </div>
             </div>
             <pre>استشارات قانونية</pre>
           </Link>
           <Link to="/services/administrative-advices" className="service_card">
             <div className="img">
               <img loading="lazy" src={img4} alt="administrative-advices" />
+              <div className="img_layer">
+                <p>
+                  نقدم أفضــل الخدمــات الاستشـاريــةالمبتكرة والمتكاملة لجميع
+                  المستثمرين على النطاق المحلي والإقليمي والعالمي.
+                </p>
+              </div>
             </div>
             <pre>استشارات إدارية</pre>
           </Link>
           <Link to="/services/business-services" className="service_card">
             <div className="img">
               <img loading="lazy" src={img5} alt="feasibility-study" />
+              <div className="img_layer">
+                <p>
+                  تقدم كـافة خدمـات الأعمـال لتشـمل القطـاع الخــاص والعــام,
+                  والمنشــآت الصغيــرة والمتوسطة، ورواد الأعمال.
+                </p>
+              </div>
             </div>
             <pre>خدمات الأعمال</pre>
           </Link>
           <Link to="/services/foreign-investments" className="service_card">
             <div className="img">
               <img loading="lazy" src={img6} alt="feasibility-study" />
+              <div className="img_layer">
+                <p>
+                  نســاعـد المستثــمر الأجنبــي علـى الاستثمار الآمن داخل
+                  المملكة، من دراسـة الجدوى حتى بدايـة النشاط ونمو النشــاط
+                  وتطويره،
+                </p>
+              </div>
             </div>
             <pre>الاستثمار الأجنبي</pre>
           </Link>
           <Link to="/investment-opportunities" className="service_card">
             <div className="img">
               <img loading="lazy" src={img7} alt="feasibility-study" />
+              <div className="img_layer">
+                <p>نُسهل الطريق أمام المستثمرين، من خلال توفير أهـم الفـرص الاستثمــارية المتــاحة،</p>
+              </div>
             </div>
             <pre>الفرص الاستثمارية</pre>
           </Link>
           <Link to="/services/preperaing-work-plans" className="service_card">
             <div className="img">
               <img loading="lazy" src={img8} alt="feasibility-study" />
+              <div className="img_layer">
+                <p>
+                  نقدم خدمـة إعداد خطط العمل ودراسـات الجـدوى بمـا يتوافـق مع
+                  متطلبات عملائنا وتطلعاتهم المستقبلية.
+                </p>
+              </div>
             </div>
             <pre>إعداد خطط العمل</pre>
           </Link>
@@ -172,6 +209,9 @@ const Home = () => {
           >
             <div className="img">
               <img loading="lazy" src={img9} alt="feasibility-study" />
+              <div className="img_layer">
+                <p>لدينا الخبرة في التعامل مع كافة الجهات التمويلية.</p>
+              </div>
             </div>
             <pre>دراسة جدوى للجهات التمويلية</pre>
           </Link>
@@ -186,11 +226,11 @@ const Home = () => {
           }}
           navigation={true}
           slidesPerView={3}
-          cssMode={true}
+          // cssMode={true}
           spaceBetween={90}
           className="mySwiper"
-          mousewheel={true}
-          keyboard={true}
+          // mousewheel={true}
+          // keyboard={true}
           modules={[Navigation, Mousewheel, Keyboard]}
         >
           <SwiperSlide className="swiper_card">
