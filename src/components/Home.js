@@ -1,8 +1,11 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper";
-import "swiper/css/pagination";
+import { Autoplay, Pagination, Navigation, Mousewheel, Keyboard } from "swiper";
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import News from "./News";
+
 import img1 from "../assets/banner1.jpg";
 import img2 from "../assets/service1.jpg";
 import img3 from "../assets/service2.jpg";
@@ -12,10 +15,16 @@ import img6 from "../assets/service5.jpg";
 import img7 from "../assets/service6.jpg";
 import img8 from "../assets/service7.jpg";
 import img9 from "../assets/service8.jpg";
+import img10 from "../assets/client1.png";
+import img11 from "../assets/client2.png";
+import img12 from "../assets/client3.png";
+import img13 from "../assets/client4.png";
+import img14 from "../assets/client5.png";
 import about from "../assets/about.png";
 import ha from "../assets/ha.png";
 import me from "../assets/me.png";
 import la from "../assets/la.png";
+
 const Home = () => {
   return (
     <React.Fragment>
@@ -28,7 +37,6 @@ const Home = () => {
             clickable: true
           }}
           loop={true}
-          navigation={true}
           modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper"
         >
@@ -195,6 +203,51 @@ const Home = () => {
           </form>
         </div>
       </section>
+      <section className="clients">
+        <h3>عملاؤنا</h3>
+        <Swiper
+          pagination={{
+            clickable: true
+          }}
+          navigation={true}
+          slidesPerView={3}
+          spaceBetween={90}
+          className="mySwiper"
+          modules={[Navigation, Mousewheel, Keyboard]}
+        >
+          <SwiperSlide className="swiper_card">
+            <img src={img10} alt="" />
+          </SwiperSlide>
+          <SwiperSlide className="swiper_card">
+            <img src={img11} alt="" />
+          </SwiperSlide>
+          <SwiperSlide className="swiper_card">
+            <img src={img12} alt="" />
+          </SwiperSlide>
+          <SwiperSlide className="swiper_card">
+            <img src={img13} alt="" />
+          </SwiperSlide>
+          <SwiperSlide className="swiper_card">
+            <img src={img14} alt="" />
+          </SwiperSlide>
+          <SwiperSlide className="swiper_card">
+            <img src={img10} alt="" />
+          </SwiperSlide>
+          <SwiperSlide className="swiper_card">
+            <img src={img11} alt="" />
+          </SwiperSlide>
+          <SwiperSlide className="swiper_card">
+            <img src={img12} alt="" />
+          </SwiperSlide>
+          <SwiperSlide className="swiper_card">
+            <img src={img13} alt="" />
+          </SwiperSlide>
+          <SwiperSlide className="swiper_card">
+            <img src={img14} alt="" />
+          </SwiperSlide>
+        </Swiper>
+      </section>
+      <News />
     </React.Fragment>
   );
 };

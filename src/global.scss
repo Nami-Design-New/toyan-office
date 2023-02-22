@@ -9,7 +9,7 @@ $gray2: #4c4c4c;
 $gold_gradient: linear-gradient(261.15deg, #f1b048 29.34%, #a36709 1023.47%);
 $gold_gradient2: linear-gradient(268.08deg, #f1b048 0%, #a36709 100%);
 $dark_gradient: linear-gradient(180deg, #000000 -40.09%, rgba(0, 0, 0, 0) 100%);
-$shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+$shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
 @mixin centerFlex {
   display: flex;
   align-items: center;
@@ -377,6 +377,8 @@ header {
         &::placeholder {
           color: $gray1;
         }
+        outline: none;
+        border: none;
       }
       button {
         width: 180px;
@@ -388,7 +390,32 @@ header {
         @include centerFlex();
         color: $white;
         font-size: 16px;
+        cursor: pointer;
       }
+    }
+  }
+}
+.clients {
+  width: 100%;
+  padding: 40px 120px;
+  h3 {
+    text-align: center;
+    font-size: 24px;
+    color: $gray1;
+    font-weight: 400;
+    margin-bottom: 40px;
+  }
+  .mySwiper {
+    width: 100%;
+    height: 240px;
+    padding: 20px 80px;
+    direction: ltr;
+    .swiper_card {
+      width: 180px;
+      height: 180px;
+      box-shadow: $shadow;
+      border-radius: 10px;
+      @include centerFlex();
     }
   }
 }
@@ -462,4 +489,55 @@ footer {
     }
   }
 }
-/******footer-end****/
+/******footer-end*******/
+/******news-section****/
+.news {
+  width: 100%;
+  height: 330px;
+  padding: 100px 170px;
+  @include centerFlex();
+  background-size: cover;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-image: url("assets/news.png");
+  .label {
+    width: 600px;
+    height: 40px;
+    border-radius: 15px;
+    @include centerFlex();
+    margin-bottom: 46px;
+    background: rgba(2, 2, 2, 0.4);
+    p {
+      font-size: 20px;
+      @include grad-text();
+    }
+  }
+  form {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    input {
+      width: 80%;
+      height: 44px;
+      border-radius: 0 15px 15px 0;
+      @include clearInput();
+      background-color: $white;
+      padding: 0 15px;
+      &::placeholder {
+        color: $gray1;
+      }
+    }
+    button {
+      @include clearInput();
+      height: 44px;
+      width: calc(20% - 20px);
+      border-radius: 15px 0 0 15px;
+      background: $gold_gradient2;
+      cursor: pointer;
+      color: $white;
+      font-size: 18px;
+      @include centerFlex();
+      gap: 5px;
+    }
+  }
+}
