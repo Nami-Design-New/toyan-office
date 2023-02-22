@@ -4,7 +4,8 @@ $white: #ffffff;
 $black: #000000;
 $gold1: #f1b048;
 $gold2: #a36709;
-$gray1: #6b6b6b;
+$gray0: #e6e6e6;
+$gray1: #c4c4c4;
 $gray2: #4c4c4c;
 $gold_gradient: linear-gradient(261.15deg, #f1b048 29.34%, #a36709 1023.47%);
 $gold_gradient2: linear-gradient(268.08deg, #f1b048 0%, #a36709 100%);
@@ -80,8 +81,9 @@ nav {
   padding: 10px 120px;
   z-index: 999999;
   transition: all .3s ease-in-out;
+  background: linear-gradient(180deg, #000000 0%, rgba(255, 255, 255, 0) 100%);
   &.active {
-    background-color: $white;
+    background: $white;
     box-shadow: $shadow;
     .nav-items .nav-item .nav-link,
     .search-lang button {
@@ -118,7 +120,8 @@ nav {
     }
     .drobdown {
       position: absolute;
-      top: 50px; /*75px*/
+      top: 50px;
+      border-radius: 8px;
       width: 200px;
       height: 0;
       overflow: hidden;
@@ -189,6 +192,24 @@ header {
         width: 100%;
         height: 100%;
         object-fit: cover;
+      }
+      .decription {
+        width: 340px;
+        height: 80px;
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        border-right: 5px solid $gold2;
+        padding: 0 20px;
+        @include centerFlex();
+        p {
+          line-height: 30px;
+          direction: rtl;
+          font-size: 18px;
+          color: $white;
+        }
       }
     }
     .swiper-pagination-bullets {
@@ -417,9 +438,135 @@ header {
       border-radius: 10px;
       @include centerFlex();
     }
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      @include grad-text();
+    }
   }
 }
 /*******home-end********/
+
+/*******employ-start****/
+.employ_header {
+  width: 100%;
+  height: 300px;
+  box-shadow: $shadow;
+  margin-bottom: 60px;
+  .image {
+    width: 100%;
+    height: 250px;
+    background-size: 100%;
+    background-image: url("assets/employ.jpg");
+    background-position: 50% 25%;
+  }
+  .path_desc {
+    width: 100%;
+    height: 50px;
+    padding: 0 120px;
+    display: flex;
+    align-items: center;
+    h2 {
+      @include grad-text();
+      font-size: 16px;
+    }
+    span {
+      margin-left: 8px;
+      font-size: 20px;
+    }
+  }
+}
+.employ_form {
+  width: 100%;
+  @include centerFlex();
+  flex-direction: column;
+  margin-bottom: 75px;
+  h3 {
+    padding-bottom: 30px;
+    @include grad-text();
+    font-size: 24px;
+  }
+  form {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    width: 50%;
+    input,
+    textarea {
+      height: 50px;
+      border-radius: 10px;
+      padding: 0 14px;
+      @include clearInput();
+      background-color: $gray0;
+      font-size: 16px;
+    }
+    textarea {
+      height: 100px;
+    }
+    button {
+      background: linear-gradient(269.48deg, #f1b048 0%, #a36709 100%);
+      border: none;
+      outline: none;
+      border-radius: 10px;
+      height: 50px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #ffffff;
+    }
+  }
+}
+/*******employ-end*****/
+
+/******news-section****/
+.news {
+  width: 100%;
+  height: 330px;
+  padding: 100px 170px;
+  @include centerFlex();
+  background-size: cover;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-image: url("assets/news.png");
+  .label {
+    width: 600px;
+    height: 40px;
+    border-radius: 15px;
+    @include centerFlex();
+    margin-bottom: 46px;
+    background: rgba(2, 2, 2, 0.4);
+    p {
+      font-size: 20px;
+      @include grad-text();
+    }
+  }
+  form {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    input {
+      width: 80%;
+      height: 44px;
+      border-radius: 0 15px 15px 0;
+      @include clearInput();
+      background-color: $white;
+      padding: 0 15px;
+      &::placeholder {
+        color: $gray1;
+      }
+    }
+    button {
+      @include clearInput();
+      height: 44px;
+      width: calc(20% - 20px);
+      border-radius: 15px 0 0 15px;
+      background: $gold_gradient2;
+      cursor: pointer;
+      color: $white;
+      font-size: 18px;
+      @include centerFlex();
+      gap: 5px;
+    }
+  }
+}
 /******footer-start****/
 footer {
   width: 100%;
@@ -490,54 +637,3 @@ footer {
   }
 }
 /******footer-end*******/
-/******news-section****/
-.news {
-  width: 100%;
-  height: 330px;
-  padding: 100px 170px;
-  @include centerFlex();
-  background-size: cover;
-  flex-direction: column;
-  background-repeat: no-repeat;
-  background-image: url("assets/news.png");
-  .label {
-    width: 600px;
-    height: 40px;
-    border-radius: 15px;
-    @include centerFlex();
-    margin-bottom: 46px;
-    background: rgba(2, 2, 2, 0.4);
-    p {
-      font-size: 20px;
-      @include grad-text();
-    }
-  }
-  form {
-    width: 100%;
-    display: flex;
-    gap: 20px;
-    input {
-      width: 80%;
-      height: 44px;
-      border-radius: 0 15px 15px 0;
-      @include clearInput();
-      background-color: $white;
-      padding: 0 15px;
-      &::placeholder {
-        color: $gray1;
-      }
-    }
-    button {
-      @include clearInput();
-      height: 44px;
-      width: calc(20% - 20px);
-      border-radius: 15px 0 0 15px;
-      background: $gold_gradient2;
-      cursor: pointer;
-      color: $white;
-      font-size: 18px;
-      @include centerFlex();
-      gap: 5px;
-    }
-  }
-}

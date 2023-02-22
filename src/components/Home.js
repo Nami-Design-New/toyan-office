@@ -1,10 +1,15 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Link } from "react-router-dom";
 import { Autoplay, Pagination, Navigation, Mousewheel, Keyboard } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import News from "./News";
+import ha from "../assets/ha.png";
+import me from "../assets/me.png";
+import la from "../assets/la.png";
+import about from "../assets/about.png";
 
 import img1 from "../assets/banner1.jpg";
 import img2 from "../assets/service1.jpg";
@@ -20,10 +25,7 @@ import img11 from "../assets/client2.png";
 import img12 from "../assets/client3.png";
 import img13 from "../assets/client4.png";
 import img14 from "../assets/client5.png";
-import about from "../assets/about.png";
-import ha from "../assets/ha.png";
-import me from "../assets/me.png";
-import la from "../assets/la.png";
+import AskService from "./AskService";
 
 const Home = () => {
   return (
@@ -31,7 +33,7 @@ const Home = () => {
       <header className="header-slider">
         <Swiper
           autoplay={{
-            delay: 3000
+            delay: 5000
           }}
           pagination={{
             clickable: true
@@ -43,14 +45,26 @@ const Home = () => {
           <SwiperSlide>
             <img src={img2} alt="" />
             <div className="layer" />
+            <div className="decription">
+              <p>
+                مكتب عمر الطويـان للاستشـارات الإداريـة حاصل على الترخيص المهني
+                رقم 15384.
+              </p>
+            </div>
           </SwiperSlide>
           <SwiperSlide>
             <img src={img1} alt="" />
             <div className="layer" />
+            <div className="decription">
+              <p>نسعى للمشاركة في تحقيق رؤية المملكة 2030.</p>
+            </div>
           </SwiperSlide>
           <SwiperSlide>
             <img src={img7} alt="" />
             <div className="layer" />
+            <div className="decription">
+              <p>ندعم رواد الأعمال حتى الاحتراف</p>
+            </div>
           </SwiperSlide>
         </Swiper>
       </header>
@@ -110,99 +124,60 @@ const Home = () => {
       <section className="services">
         <h2>خدمتنا</h2>
         <div className="services_grid">
-          <div className="service_card">
+          <Link to="/services/feasibility-study" className="service_card">
             <div className="img">
-              <img src={img2} alt="feasibility-study" />
+              <img loading="lazy" src={img2} alt="feasibility-study" />
             </div>
             <pre>دراسة جدوى اقتصادية</pre>
-          </div>
-          <div className="service_card">
+          </Link>
+          <Link to="/services/legal-advices" className="service_card">
             <div className="img">
-              <img src={img3} alt="legal-advices" />
+              <img loading="lazy" src={img3} alt="legal-advices" />
             </div>
             <pre>استشارات قانونية</pre>
-          </div>
-          <div className="service_card">
+          </Link>
+          <Link to="/services/administrative-advices" className="service_card">
             <div className="img">
-              <img src={img4} alt="administrative-advices" />
+              <img loading="lazy" src={img4} alt="administrative-advices" />
             </div>
             <pre>استشارات إدارية</pre>
-          </div>
-          <div className="service_card">
+          </Link>
+          <Link to="/services/business-services" className="service_card">
             <div className="img">
-              <img src={img5} alt="feasibility-study" />
+              <img loading="lazy" src={img5} alt="feasibility-study" />
             </div>
             <pre>خدمات الأعمال</pre>
-          </div>
-          <div className="service_card">
+          </Link>
+          <Link to="/services/foreign-investments" className="service_card">
             <div className="img">
-              <img src={img6} alt="feasibility-study" />
+              <img loading="lazy" src={img6} alt="feasibility-study" />
             </div>
             <pre>الاستثمار الأجنبي</pre>
-          </div>
-          <div className="service_card">
+          </Link>
+          <Link to="/investment-opportunities" className="service_card">
             <div className="img">
-              <img src={img7} alt="feasibility-study" />
+              <img loading="lazy" src={img7} alt="feasibility-study" />
             </div>
             <pre>الفرص الاستثمارية</pre>
-          </div>
-          <div className="service_card">
+          </Link>
+          <Link to="/services/preperaing-work-plans" className="service_card">
             <div className="img">
-              <img src={img8} alt="feasibility-study" />
+              <img loading="lazy" src={img8} alt="feasibility-study" />
             </div>
             <pre>إعداد خطط العمل</pre>
-          </div>
-          <div className="service_card">
+          </Link>
+          <Link
+            to="/services/feasibility-study-for-financing-agencies"
+            className="service_card"
+          >
             <div className="img">
-              <img src={img9} alt="feasibility-study" />
+              <img loading="lazy" src={img9} alt="feasibility-study" />
             </div>
             <pre>دراسة جدوى للجهات التمويلية</pre>
-          </div>
+          </Link>
         </div>
       </section>
-      <section className="ask_service">
-        <div className="ask_descrip">
-          <h3>مراحل طلب الخدمة</h3>
-          <ol>
-            <li>سيتم التواصل مع مقدم طلب الخدمة من قبل خدمة العملاء.</li>
-            <li>
-              سيقوم ممثلي خدمة العملاء بالحصول بيانات ومعلومات الخدمة من خلالكم
-              ثم نقدم لكم العرض الفني والمالي للخدمة.
-            </li>
-            <li>
-              {" "}بعد موافقتكم على العرض المالي والفني يتم تحويل العرض الفني
-              للقسم المختص للبدء في تنفيذه فورا.
-            </li>
-            <li>
-              {" "}بعد اعداد الخدمة من قبل القسم المختص يتم التدقيق والمراجعة.
-            </li>
-            <li>
-              من ثم يتم ارسالها للعميل، وتجري عملية خدمة العملاء ما بعد البيع.
-            </li>
-          </ol>
-        </div>
-        <div className="ask_form">
-          <h3>ارسل طلبك الان</h3>
-          <form action="">
-            <input type="text" name="name" placeholder="الاسم" required />
-            <input
-              type="email"
-              name="email"
-              placeholder="البريد الالكتروني"
-              required
-            />
-            <input type="tel" name="phone" placeholder="رقم الهاتف" required />
-            <input
-              type="text"
-              name="service-type"
-              placeholder="نوع الخدمة"
-              required
-            />
-            <textarea name="message" placeholder="محتوى رسالتك" required />
-            <button type="submit">إرسال</button>
-          </form>
-        </div>
-      </section>
+      <AskService />
       <section className="clients">
         <h3>عملاؤنا</h3>
         <Swiper
@@ -211,8 +186,11 @@ const Home = () => {
           }}
           navigation={true}
           slidesPerView={3}
+          cssMode={true}
           spaceBetween={90}
           className="mySwiper"
+          mousewheel={true}
+          keyboard={true}
           modules={[Navigation, Mousewheel, Keyboard]}
         >
           <SwiperSlide className="swiper_card">
