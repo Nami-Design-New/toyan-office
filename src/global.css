@@ -1,4 +1,4 @@
-/******constants********/
+/*****************constants******************/
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&display=swap");
 * {
   padding: 0;
@@ -25,7 +25,7 @@ a {
 }
 
 ::-webkit-scrollbar {
-  width: 2px;
+  width: 3px;
 }
 
 ::-webkit-scrollbar-track {
@@ -36,7 +36,7 @@ a {
   background-image: linear-gradient(261.15deg, #f1b048 29.34%, #a36709 1023.47%);
 }
 
-/************************/
+/********************************************/
 /*******nav-start*******/
 nav {
   width: 100%;
@@ -49,6 +49,18 @@ nav {
   justify-content: space-between;
   padding: 10px 120px;
   z-index: 999999;
+  transition: all 0.3s ease-in-out;
+}
+nav.active {
+  background-color: #ffffff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+nav.active .nav-items .nav-item .nav-link,
+nav.active .search-lang button {
+  color: #4c4c4c;
+}
+nav.active .search-lang span {
+  background-color: #4c4c4c;
 }
 nav .logo {
   height: 100%;
@@ -61,29 +73,30 @@ nav .nav-items {
   gap: 35px;
   position: relative;
 }
-nav .nav-items .nav-item a {
+nav .nav-items .nav-item .nav-link {
   font-size: 18px;
   color: #ffffff;
   font-weight: 500;
   transition: 0.3s ease-in-out;
 }
-nav .nav-items .nav-item a.active, nav .nav-items .nav-item a:hover {
+nav .nav-items .nav-item .nav-link.active, nav .nav-items .nav-item .nav-link:hover {
   background: linear-gradient(261.15deg, #f1b048 29.34%, #a36709 1023.47%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-nav .nav-items .nav-item a.icon {
+nav .nav-items .nav-item .nav-link.icon {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 nav .nav-items .drobdown {
   position: absolute;
-  top: 100%;
+  top: 50px; /*75px*/
   width: 200px;
   height: 0;
   overflow: hidden;
+  transition: 0.5s ease-in-out;
   padding: 0 10px;
   background: linear-gradient(211.13deg, #f1b048 0%, #a36709 100%);
 }
@@ -98,9 +111,14 @@ nav .nav-items .drobdown ul li a {
   font-size: 14px;
   display: block;
   height: 100%;
+  color: #ffffff;
 }
 nav .nav-items .drobdown ul li a:hover {
-  color: #ffffff !important;
+  background: none !important;
+  background-clip: initial;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  color: #4c4c4c;
 }
 nav .search-lang {
   width: 100px;
@@ -169,4 +187,286 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
   background-color: #ffffff;
 }
 
-/*******home-end********//*# sourceMappingURL=global.css.map */
+.about {
+  margin-top: 60px;
+  width: 100%;
+}
+.about .about-flex {
+  display: flex;
+}
+.about .description {
+  width: 50%;
+  padding-right: 120px;
+}
+.about .description span {
+  color: #4c4c4c;
+  font-size: 24px;
+  line-height: 44px;
+}
+.about .description h1 {
+  margin: 15px 0 30px 0;
+  background: linear-gradient(261.15deg, #f1b048 29.34%, #a36709 1023.47%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+}
+.about .description p {
+  font-size: 24px;
+  color: #000000;
+  line-height: 55px;
+}
+.about .wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+.about .wrapper img {
+  max-width: 100%;
+}
+.about .about-grid {
+  width: 100%;
+  padding: 40px 120px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+}
+.about .about-grid .about-card {
+  width: 100%;
+  height: 280px;
+  border-radius: 24px;
+  padding: 50px 15px 0 15px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  position: relative;
+}
+.about .about-grid .about-card .card-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(261.15deg, #f1b048 29.34%, #a36709 1023.47%);
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about .about-grid .about-card .card-icon img {
+  width: 45px;
+}
+.about .about-grid .about-card h2 {
+  text-align: center;
+  color: #4c4c4c;
+}
+.about .about-grid .about-card p {
+  color: #000000;
+  line-height: 26px;
+  text-align: center;
+  color: #6b6b6b;
+}
+.about .about-grid .about-card .cen {
+  margin-top: 15px;
+}
+.about .about-grid .about-card .cen-p {
+  margin-top: 30px;
+  line-height: 30px;
+}
+
+.services {
+  padding: 20px 120px;
+}
+.services h2 {
+  text-align: center;
+  color: #4c4c4c;
+  margin-bottom: 40px;
+}
+.services .services_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+  margin-bottom: 80px;
+}
+.services .services_grid .service_card {
+  height: 280px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(268.08deg, #f1b048 0%, #a36709 100%);
+}
+.services .services_grid .service_card .img {
+  width: 100%;
+  height: 240px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.services .services_grid .service_card .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.services .services_grid .service_card pre {
+  text-align: center;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.ask_service {
+  width: 100%;
+  height: 480px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("assets/ask-service.jpg");
+  background-size: cover;
+  background-position: 50% 80%;
+  display: flex;
+  gap: 90px;
+  padding: 30px 120px;
+}
+.ask_service h3 {
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 45px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.ask_service .ask_descrip {
+  width: calc(50% - 20px);
+}
+.ask_service .ask_descrip ol li {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.ask_service .ask_form {
+  width: calc(50% - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.ask_service .ask_form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+.ask_service .ask_form form input {
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  background: none;
+  outline: none;
+  background-color: #ffffff;
+  padding: 0 12px;
+}
+.ask_service .ask_form form input::-moz-placeholder {
+  color: #6b6b6b;
+}
+.ask_service .ask_form form input::placeholder {
+  color: #6b6b6b;
+}
+.ask_service .ask_form form textarea {
+  height: 100px;
+  padding: 0 12px;
+  border-radius: 10px;
+}
+.ask_service .ask_form form textarea::-moz-placeholder {
+  color: #6b6b6b;
+}
+.ask_service .ask_form form textarea::placeholder {
+  color: #6b6b6b;
+}
+.ask_service .ask_form form button {
+  width: 180px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: linear-gradient(268.08deg, #f1b048 0%, #a36709 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+/*******home-end********/
+/******footer-start****/
+footer {
+  width: 100%;
+  height: 460px;
+  background-color: #000000;
+  padding: 40px 100px;
+}
+footer .footer_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+footer .footer_grid .logo img {
+  max-width: 100%;
+}
+footer .footer_grid .col {
+  padding: 0 40px;
+}
+footer .footer_grid h3 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+footer .footer_grid p {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 30px;
+}
+footer .footer_grid .services {
+  padding: 0 100px;
+}
+footer .footer_grid .services ul {
+  display: flex;
+  flex-direction: column;
+}
+footer .footer_grid .services ul li {
+  line-height: 30px;
+}
+footer .footer_grid .services ul li a {
+  line-height: 20px;
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 400;
+  transition: 0.3s ease-in-out;
+}
+footer .footer_grid .services ul li a:hover {
+  background: linear-gradient(261.15deg, #f1b048 29.34%, #a36709 1023.47%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+footer .line {
+  width: 100%;
+  height: 1px;
+  margin: 20px 0;
+  background-color: #ffffff;
+}
+footer .contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .contact h4,
+footer .contact p,
+footer .contact a {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+footer .contact a:hover {
+  transition: 0.3s ease-in-out;
+  background: linear-gradient(261.15deg, #f1b048 29.34%, #a36709 1023.47%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/******footer-end****//*# sourceMappingURL=global.css.map */

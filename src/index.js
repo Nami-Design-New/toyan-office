@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import App from "./components/App";
-// import "./i18next";
+import "./i18next";
 import "./global.css";
 
 import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";

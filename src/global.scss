@@ -1,13 +1,15 @@
-/******constants********/
+/*****************constants******************/
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&display=swap');
 $white: #ffffff;
 $black: #000000;
 $gold1: #f1b048;
 $gold2: #a36709;
-$gray1: #c4c4c4;
-$gray2: #717171;
+$gray1: #6b6b6b;
+$gray2: #4c4c4c;
 $gold_gradient: linear-gradient(261.15deg, #f1b048 29.34%, #a36709 1023.47%);
+$gold_gradient2: linear-gradient(268.08deg, #f1b048 0%, #a36709 100%);
 $dark_gradient: linear-gradient(180deg, #000000 -40.09%, rgba(0, 0, 0, 0) 100%);
+$shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 @mixin centerFlex {
   display: flex;
   align-items: center;
@@ -57,7 +59,7 @@ a {
 }
 
 ::-webkit-scrollbar {
-  width: 2px;
+  width: 3px;
 }
 ::-webkit-scrollbar-track {
   background-color: $white;
@@ -65,7 +67,7 @@ a {
 ::-webkit-scrollbar-thumb {
   background-image: $gold_gradient;
 }
-/************************/
+/********************************************/
 
 /*******nav-start*******/
 nav {
@@ -77,6 +79,18 @@ nav {
   @include space-between();
   padding: 10px 120px;
   z-index: 999999;
+  transition: all .3s ease-in-out;
+  &.active {
+    background-color: $white;
+    box-shadow: $shadow;
+    .nav-items .nav-item .nav-link,
+    .search-lang button {
+      color: $gray2;
+    }
+    .search-lang span {
+      background-color: $gray2;
+    }
+  }
   .logo {
     height: 100%;
     img {
@@ -87,7 +101,7 @@ nav {
     display: flex;
     gap: 35px;
     position: relative;
-    .nav-item a {
+    .nav-item  .nav-link {
       font-size: 18px;
       color: $white;
       font-weight: 500;
@@ -104,10 +118,11 @@ nav {
     }
     .drobdown {
       position: absolute;
-      top: 100%;
+      top: 50px; /*75px*/
       width: 200px;
       height: 0;
       overflow: hidden;
+      transition: .5s ease-in-out;
       padding: 0 10px;
       background: linear-gradient(211.13deg, #f1b048 0%, #a36709 100%);
       ul {
@@ -119,8 +134,13 @@ nav {
             font-size: 14px;
             display: block;
             height: 100%;
+            color: $white;
             &:hover {
-              color: $white !important;
+              background: none !important;
+              background-clip: initial;
+              -webkit-background-clip: initial;
+              -webkit-text-fill-color: initial;
+              color: $gray2;
             }
           }
         }
@@ -189,4 +209,257 @@ header {
     }
   }
 }
+.about {
+  margin-top: 60px;
+  width: 100%;
+  .about-flex {
+    display: flex;
+  }
+  .description {
+    width: 50%;
+    padding-right: 120px;
+    span {
+      color: $gray2;
+      font-size: 24px;
+      line-height: 44px;
+    }
+    h1 {
+      margin: 15px 0 30px 0;
+      @include grad-text();
+      font-size: 30px;
+    }
+    p {
+      font-size: 24px;
+      color: $black;
+      line-height: 55px;
+    }
+  }
+  .wrapper {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    img {
+      max-width: 100%;
+    }
+  }
+  .about-grid {
+    width: 100%;
+    padding: 40px 120px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+    .about-card {
+      width: 100%;
+      height: 280px;
+      border-radius: 24px;
+      padding: 50px 15px 0 15px;
+      box-shadow: $shadow;
+      position: relative;
+      .card-icon {
+        width: 70px;
+        height: 70px;
+        background: $gold_gradient;
+        position: absolute;
+        top: -35px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 10px;
+        @include centerFlex();
+        img {
+          width: 45px;
+        }
+      }
+      h2 {
+        text-align: center;
+        color: $gray2;
+      }
+      p {
+        color: $black;
+        line-height: 26px;
+        text-align: center;
+        color: $gray1;
+      }
+      .cen {
+        margin-top: 15px;
+      }
+      .cen-p {
+        margin-top: 30px;
+        line-height: 30px;
+      }
+    }
+  }
+}
+.services {
+  padding: 20px 120px;
+  h2 {
+    text-align: center;
+    color: $gray2;
+    margin-bottom: 40px;
+  }
+  .services_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+    margin-bottom: 80px;
+    .service_card {
+      height: 280px;
+      border-radius: 20px;
+      box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+      background: $gold_gradient2;
+      .img {
+        width: 100%;
+        height: 240px;
+        border-radius: 20px;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      pre {
+        text-align: center;
+        color: $white;
+        font-size: 18px;
+      }
+    }
+  }
+}
+.ask_service {
+  width: 100%;
+  height: 480px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("assets/ask-service.jpg");
+  background-size: cover;
+  background-position: 50% 80%;
+  display: flex;
+  gap: 90px;
+  padding: 30px 120px;
+  h3 {
+    color: $white;
+    font-size: 24px;
+    line-height: 45px;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  .ask_descrip {
+    width: calc(50% - 20px);
+    ol li {
+      color: $white;
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+  }
+  .ask_form {
+    width: calc(50% - 70px);
+    @include space-between();
+    flex-direction: column;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      input {
+        height: 35px;
+        border-radius: 10px;
+        @include clearInput();
+        background-color: $white;
+        padding: 0 12px;
+        &::placeholder {
+          color: $gray1;
+        }
+      }
+      textarea {
+        height: 100px;
+        padding: 0 12px;
+        border-radius: 10px;
+        &::placeholder {
+          color: $gray1;
+        }
+      }
+      button {
+        width: 180px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background: $gold_gradient2;
+        @include centerFlex();
+        color: $white;
+        font-size: 16px;
+      }
+    }
+  }
+}
 /*******home-end********/
+/******footer-start****/
+footer {
+  width: 100%;
+  height: 460px;
+  background-color: $black;
+  padding: 40px 100px;
+  .footer_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    .logo img {
+      max-width: 100%;
+    }
+    .col {
+      padding: 0 40px;
+    }
+    h3 {
+      color: $white;
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+    p {
+      color: $white;
+      font-size: 16px;
+      line-height: 30px;
+    }
+    .services {
+      padding: 0 100px;
+      ul {
+        display: flex;
+        flex-direction: column;
+        li {
+          line-height: 30px;
+          a {
+            line-height: 20px;
+            font-size: 15px;
+            color: $white;
+            font-weight: 400;
+            transition: .3s ease-in-out;
+            &:hover {
+              @include grad-text();
+            }
+          }
+        }
+      }
+    }
+  }
+  .line {
+    width: 100%;
+    height: 1px;
+    margin: 20px 0;
+    background-color: $white;
+  }
+  .contact {
+    @include space-between();
+    h4,
+    p,
+    a {
+      color: $white;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+    a:hover {
+      transition: .3s ease-in-out;
+      @include grad-text();
+    }
+  }
+}
+/******footer-end****/

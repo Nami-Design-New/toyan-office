@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useRef } from "react";
 import Logo from "../assets/logo.png";
 import { NavLink, Link } from "react-router-dom";
 const Nav = () => {
+  const drop = useRef(null);
+  const nav = useRef(null);
+  const handlemove = () => {
+    drop.current.style.height = "270px";
+  };
+  const handleLeave = () => {
+    drop.current.style.height = "0px";
+  };
+  window.addEventListener("scroll", () => {
+    if (window.scrollY >= 100) {
+      nav.current.classList.add("active");
+    } else {
+      nav.current.classList.remove("active");
+    }
+  });
   return (
-    <nav>
+    <nav ref={nav}>
       <div className="logo">
         <Link to="/">
           <img src={Logo} alt="logo" />
@@ -11,13 +26,25 @@ const Nav = () => {
       </div>
       <ul className="nav-items">
         <li className="nav-item">
-          <NavLink to="/">الرئيسية</NavLink>
+          <NavLink className="nav-link" to="/">
+            الرئيسية
+          </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/services/feasibility-study" className="icon">
+          <NavLink
+            to="/services/feasibility-study"
+            onMouseMove={handlemove}
+            onMouseLeave={handleLeave}
+            className="icon nav-link"
+          >
             خدماتنا <i className="fa-solid fa-caret-down" />
           </NavLink>
-          <div className="drobdown">
+          <div
+            ref={drop}
+            onMouseMove={handlemove}
+            onMouseLeave={handleLeave}
+            className="drobdown"
+          >
             <ul>
               <li>
                 <Link to="/services/feasibility-study">
@@ -59,16 +86,24 @@ const Nav = () => {
           </div>
         </li>
         <li className="nav-item">
-          <NavLink to="/clients">عملاؤنا</NavLink>
+          <NavLink className="nav-link" to="/clients">
+            عملاؤنا
+          </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/employment">التوظيف</NavLink>
+          <NavLink className="nav-link" to="/employment">
+            التوظيف
+          </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/knowlege">المعرفة</NavLink>
+          <NavLink className="nav-link" to="/knowlege">
+            المعرفة
+          </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/contact">اتصل بنا</NavLink>
+          <NavLink className="nav-link" to="/contact">
+            اتصل بنا
+          </NavLink>
         </li>
       </ul>
       <div className="search-lang">
