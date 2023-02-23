@@ -1,6 +1,6 @@
 import React from "react";
 import News from "./News";
-
+import Map from "./Map";
 const Contact = () => {
   return (
     <React.Fragment>
@@ -13,7 +13,29 @@ const Contact = () => {
           </h2>
         </div>
       </header>
-      <div className="map" />
+      <div className="map">
+        <div className="form">
+          <form action="">
+            <input type="text" name="name" placeholder="الاسم" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="البريد الالكتروني"
+              required
+            />
+            <input type="tel" name="phone" placeholder="رقم الهاتف" required />
+            <input
+              type="text"
+              name="service-type"
+              placeholder="نوع الخدمة"
+              required
+            />
+            <textarea name="message" placeholder="محتوى رسالتك" required />
+            <button type="submit">إرسال</button>
+          </form>
+        </div>
+        <Map />
+      </div>
       <div className="info">
         <div className="info_card">
           <h4>اتصل بنا</h4>

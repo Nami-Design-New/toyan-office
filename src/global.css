@@ -497,7 +497,6 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
 .services_header {
   width: 100%;
   height: 330px;
-  margin-bottom: 60px;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
 }
 .services_header .image {
@@ -524,6 +523,31 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
 .services_header .path_desc span {
   margin-left: 8px;
   font-size: 20px;
+}
+
+.services_container {
+  width: 100%;
+  padding: 75px 120px;
+  display: flex;
+  gap: 80px;
+}
+.services_container aside {
+  width: 300px;
+  height: 350px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+  padding: 14px 24px;
+  border-radius: 10px;
+}
+.services_container aside a {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 500;
+}
+.services_container aside a.active, .services_container aside a:hover {
+  background: linear-gradient(267.28deg, #f1b048 -27.68%, #a36709 129.01%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /*******clients-start****/
@@ -838,6 +862,69 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
 .contact_header .path_desc span {
   margin-left: 8px;
   font-size: 20px;
+}
+
+.map {
+  width: 100%;
+  display: flex;
+}
+.map .form {
+  width: 50%;
+  padding: 50px 120px;
+  background-color: #e6e6e6;
+}
+.map .form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+.map .form form input {
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  background: none;
+  outline: none;
+  background-color: #c4c4c4;
+  padding: 0 12px;
+}
+.map .form form input::-moz-placeholder {
+  color: #4c4c4c;
+}
+.map .form form input::placeholder {
+  color: #4c4c4c;
+}
+.map .form form textarea {
+  background-color: #c4c4c4;
+  height: 100px;
+  padding: 0 12px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+}
+.map .form form textarea::-moz-placeholder {
+  color: #4c4c4c;
+}
+.map .form form textarea::placeholder {
+  color: #4c4c4c;
+}
+.map .form form button {
+  width: 180px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: linear-gradient(268.08deg, #f1b048 0%, #a36709 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.map .map_layer {
+  width: 50%;
+  height: inherit;
 }
 
 .info {
