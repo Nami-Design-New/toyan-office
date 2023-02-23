@@ -44,7 +44,3 @@ const Employ = () => {
 };
 
 export default Employ;
-
-// <label htmlFor="file-uploud" className="choose">
-//   اختيار ملف
-// </label>

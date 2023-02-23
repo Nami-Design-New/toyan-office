@@ -32,7 +32,7 @@ const Nav = () => {
         </li>
         <li className="nav-item">
           <NavLink
-            to="/services/feasibility-study"
+            to="/services"
             onMouseMove={handlemove}
             onMouseLeave={handleLeave}
             className="icon nav-link"
@@ -47,7 +47,7 @@ const Nav = () => {
           >
             <ul>
               <li>
-                <Link to="/services/feasibility-study">
+                <Link to="/services">
                   دراسة جدوى اقتصادية
                 </Link>
               </li>

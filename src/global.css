@@ -497,6 +497,7 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
 .services_header {
   width: 100%;
   height: 330px;
+  margin-bottom: 60px;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
 }
 .services_header .image {

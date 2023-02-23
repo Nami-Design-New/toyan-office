@@ -23,7 +23,7 @@ const Footer = () => {
           <h3>خدماتنا</h3>
           <ul>
             <li>
-              <Link to="/services/feasibility-study">دراسة جدوى اقتصادية</Link>
+              <Link to="/services">دراسة جدوى اقتصادية</Link>
             </li>
             <li>
               <Link to="/services/legal-advices">استشارات قانونية</Link>

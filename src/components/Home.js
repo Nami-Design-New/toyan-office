@@ -132,7 +132,7 @@ const Home = () => {
       <section className="services">
         <h2>خدمتنا</h2>
         <div className="services_grid">
-          <Link to="/services/feasibility-study" className="service_card">
+          <Link to="/services" className="service_card">
             <div className="img">
               <img loading="lazy" src={img2} alt="feasibility-study" />
               <div className="img_layer">

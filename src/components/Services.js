@@ -1,4 +1,5 @@
 import React from "react";
+import AskService from './AskService';
 
 const Services = () => {
   return (
@@ -11,6 +12,7 @@ const Services = () => {
           </h2>
         </div>
       </header>
+      <AskService/>
     </React.Fragment>
   );
 };
