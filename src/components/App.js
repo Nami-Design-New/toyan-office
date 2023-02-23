@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Nav from "./Nav";
 import Home from "./Home";
-import Services from './Services';
+import Services from "./Services";
 import Clients from "./Clients";
 import Employ from "./Employ";
 import Knowlege from "./Knowlege";
