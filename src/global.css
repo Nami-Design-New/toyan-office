@@ -62,6 +62,16 @@ nav.active .search-lang button {
 nav.active .search-lang span {
   background-color: #4c4c4c;
 }
+nav.active .search-lang input {
+  border-color: #a36709;
+  color: #4c4c4c;
+}
+nav.active .search-lang input::-moz-placeholder {
+  color: #4c4c4c;
+}
+nav.active .search-lang input::placeholder {
+  color: #4c4c4c;
+}
 nav .logo {
   height: 100%;
 }
@@ -127,6 +137,26 @@ nav .search-lang {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  position: relative;
+}
+nav .search-lang input {
+  height: 24px;
+  width: 0;
+  transition: all 0.4s ease-in-out;
+  border: none;
+  background: none;
+  outline: none;
+  border-bottom: 2px solid #ffffff;
+  position: absolute;
+  left: 90%;
+  top: 4px;
+  color: white;
+}
+nav .search-lang input::-moz-placeholder {
+  color: #ffffff;
+}
+nav .search-lang input::placeholder {
+  color: #ffffff;
 }
 nav .search-lang button {
   border: none;

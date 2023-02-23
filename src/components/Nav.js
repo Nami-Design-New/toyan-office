@@ -1,9 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Logo from "../assets/logo.png";
 import { NavLink, Link } from "react-router-dom";
 const Nav = () => {
   const drop = useRef(null);
   const nav = useRef(null);
+  const search = useRef(null);
+  const [toggle, setToggle] = useState(false);
   const handlemove = () => {
     drop.current.style.height = "270px";
   };
@@ -17,6 +19,15 @@ const Nav = () => {
       nav.current.classList.remove("active");
     }
   });
+  const handleclick = () => {
+    if (toggle === false) {
+      search.current.style.width = "150px";
+      setToggle(true);
+    } else {
+      search.current.style.width = "0";
+      setToggle(false);
+    }
+  };
   return (
     <nav ref={nav}>
       <div className="logo">
@@ -47,9 +58,7 @@ const Nav = () => {
           >
             <ul>
               <li>
-                <Link to="/services">
-                  دراسة جدوى اقتصادية
-                </Link>
+                <Link to="/services">دراسة جدوى اقتصادية</Link>
               </li>
               <li>
                 <Link to="/services/legal-advices">استشارات قانونية</Link>
@@ -107,7 +116,8 @@ const Nav = () => {
         </li>
       </ul>
       <div className="search-lang">
-        <button>
+        <input type="text" placeholder="ابحث عن خدمه" ref={search} />
+        <button onClick={handleclick}>
           <i className="fa-solid fa-magnifying-glass" />
         </button>
         <span />
