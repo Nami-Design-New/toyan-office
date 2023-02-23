@@ -37,7 +37,6 @@ a {
 }
 
 /********************************************/
-/*******nav-start*******/
 nav {
   width: 100%;
   height: 110px;
@@ -144,7 +143,6 @@ nav .search-lang span {
   background-color: #ffffff;
 }
 
-/********nav-end********/
 /******home-start*******/
 header {
   width: 100%;
@@ -495,7 +493,52 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
   background-clip: text;
 }
 
-/*******home-end********/
+/*******clients-start****/
+.clients_header {
+  width: 100%;
+  height: 330px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}
+.clients_header .image {
+  width: 100%;
+  height: 280px;
+  background-size: 100%;
+  background-image: url("assets/clients.jpg");
+  background-position: 50% 55%;
+}
+.clients_header .path_desc {
+  width: 100%;
+  height: 50px;
+  padding: 0 120px;
+  display: flex;
+  align-items: center;
+}
+.clients_header .path_desc h2 {
+  background: linear-gradient(267.28deg, #f1b048 -27.68%, #a36709 129.01%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 16px;
+}
+.clients_header .path_desc span {
+  margin-left: 8px;
+  font-size: 20px;
+}
+
+.clients_gird {
+  width: 100%;
+  padding: 80px 120px;
+  display: grid;
+  grid-template-columns: repeat(4, 220px);
+  gap: 50px;
+}
+.clients_gird .client_card {
+  height: 220px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 /*******employ-start****/
 .employ_header {
   width: 100%;
@@ -618,7 +661,6 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
   direction: rtl;
 }
 
-/*******employ-end*****/
 /******knowlege-start**/
 .know_header {
   width: 100%;
@@ -707,7 +749,6 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
   line-height: 25px;
 }
 
-/******knowlege-end****/
 /******Contact-start****/
 .contact_header {
   width: 100%;
@@ -790,7 +831,6 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
   text-align: center;
 }
 
-/******Contact-end******/
 /******footer-start****/
 footer {
   width: 100%;
@@ -869,7 +909,6 @@ footer .contact a:hover {
   background-clip: text;
 }
 
-/******footer-end*******/
 /******news-section****/
 .news {
   width: 100%;
