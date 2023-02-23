@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Nav from "./Nav";
 import Home from "./Home";
+import Services from './Services';
 import Clients from "./Clients";
 import Employ from "./Employ";
 import Knowlege from "./Knowlege";
@@ -15,6 +16,7 @@ const App = () => {
       <div className="app-holder">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/services/feasibility-study" element={<Services />} />
           <Route path="/clients" element={<Clients />} />
           <Route path="/employment" element={<Employ />} />
           <Route path="/knowlege" element={<Knowlege />} />

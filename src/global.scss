@@ -166,6 +166,7 @@ nav {
     }
   }
 }
+
 /******home-start*******/
 header {
   width: 100%;
@@ -486,6 +487,36 @@ header {
     }
   }
 }
+
+/*******services-start***/
+.services_header {
+  width: 100%;
+  height: 330px;
+  box-shadow: $shadow;
+  .image {
+    width: 100%;
+    height: 280px;
+    background-size: 100%;
+    background-image: url("assets/service11.jpg");
+    background-position: 50% 22%;
+  }
+  .path_desc {
+    width: 100%;
+    height: 50px;
+    padding: 0 120px;
+    display: flex;
+    align-items: center;
+    h2 {
+      @include grad-text();
+      font-size: 16px;
+    }
+    span {
+      margin-left: 8px;
+      font-size: 20px;
+    }
+  }
+}
+
 /*******clients-start****/
 .clients_header {
   width: 100%;
@@ -519,14 +550,31 @@ header {
   padding: 80px 120px;
   display: grid;
   grid-template-columns: repeat(4, 220px);
-  gap: 50px;
+  gap: 81px;
+  position: relative;
   .client_card {
     height: 220px;
     box-shadow: $shadow;
     border-radius: 10px;
     cursor: pointer;
+    @include centerFlex();
+  }
+  button {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    @include clearInput();
+    width: 50px;
+    height: 50px;
+    i {
+      @include grad-text();
+      font-size: 30px;
+      cursor: pointer;
+    }
   }
 }
+
 /*******employ-start****/
 .employ_header {
   width: 100%;
@@ -626,9 +674,13 @@ header {
       height: 40px;
       cursor: pointer;
       direction: rtl;
+      &::-webkit-file-upload-button {
+        cursor: pointer;
+      }
     }
   }
 }
+
 /******knowlege-start**/
 .know_header {
   width: 100%;
@@ -711,6 +763,7 @@ header {
     }
   }
 }
+
 /******Contact-start****/
 .contact_header {
   width: 100%;
@@ -780,6 +833,7 @@ header {
     }
   }
 }
+
 /******footer-start****/
 footer {
   width: 100%;

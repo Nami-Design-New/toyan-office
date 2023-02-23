@@ -1,6 +1,6 @@
 import React from "react";
 import AskService from "./AskService";
-
+import img from "../assets/cleintpng.png";
 const Clients = () => {
   return (
     <React.Fragment>
@@ -14,18 +14,46 @@ const Clients = () => {
         </div>
       </header>
       <main className="clients_gird">
-        <div className="client_card" />
-        <div className="client_card" />
-        <div className="client_card" />
-        <div className="client_card" />
-        <div className="client_card" />
-        <div className="client_card" />
-        <div className="client_card" />
-        <div className="client_card" />
-        <div className="client_card" />
-        <div className="client_card" />
-        <div className="client_card" />
-        <div className="client_card" />
+        <div className="client_card">
+          <img src={img} alt="" />
+        </div>
+        <div className="client_card">
+          <img src={img} alt="" />
+        </div>
+        <div className="client_card">
+          <img src={img} alt="" />
+        </div>
+        <div className="client_card">
+          <img src={img} alt="" />
+        </div>
+        <div className="client_card">
+          <img src={img} alt="" />
+        </div>
+        <div className="client_card">
+          <img src={img} alt="" />
+        </div>
+        <div className="client_card">
+          <img src={img} alt="" />
+        </div>
+        <div className="client_card">
+          <img src={img} alt="" />
+        </div>
+        <div className="client_card">
+          <img src={img} alt="" />
+        </div>
+        <div className="client_card">
+          <img src={img} alt="" />
+        </div>
+        <div className="client_card">
+          <img src={img} alt="" />
+        </div>
+        <div className="client_card">
+          <img src={img} alt="" />
+        </div>
+        
+        <button title="load more">
+          <i className="fas fa-chevron-down" />
+        </button>
       </main>
       <AskService />
     </React.Fragment>
