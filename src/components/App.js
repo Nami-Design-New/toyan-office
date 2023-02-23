@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Nav from "./Nav";
 import Home from "./Home";
 import Employ from "./Employ";
+import Knowlege from "./Knowlege";
+import Contact from './Contact';
 import Footer from "./Footer";
 
 const App = () => {
@@ -13,6 +15,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/employment" element={<Employ />} />
+          <Route path="/knowlege" element={<Knowlege />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
       <Footer />

@@ -11,7 +11,9 @@ import me from "../assets/me.png";
 import la from "../assets/la.png";
 import about from "../assets/about.png";
 
-import img1 from "../assets/banner1.jpg";
+import home1 from "../assets/home1.jpg";
+import home2 from "../assets/home2.jpg";
+import home3 from "../assets/home3.jpg";
 import img2 from "../assets/service1.jpg";
 import img3 from "../assets/service2.jpg";
 import img4 from "../assets/service3.jpg";
@@ -43,8 +45,10 @@ const Home = () => {
           className="mySwiper"
         >
           <SwiperSlide>
-            <img src={img2} alt="" />
+            <img src={home1} alt="" />
             <div className="layer" />
+            <div className="right" />
+            <div className="left" />
             <div className="decription">
               <p>
                 مكتب عمر الطويـان للاستشـارات الإداريـة حاصل على الترخيص المهني
@@ -53,15 +57,19 @@ const Home = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <img src={img1} alt="" />
+            <img src={home2} alt="" />
             <div className="layer" />
+            <div className="right" />
+            <div className="left" />
             <div className="decription">
               <p>نسعى للمشاركة في تحقيق رؤية المملكة 2030.</p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <img src={img7} alt="" />
+            <img src={home3} alt="" />
             <div className="layer" />
+            <div className="right" />
+            <div className="left" />
             <div className="decription">
               <p>ندعم رواد الأعمال حتى الاحتراف</p>
             </div>
@@ -186,7 +194,10 @@ const Home = () => {
             <div className="img">
               <img loading="lazy" src={img7} alt="feasibility-study" />
               <div className="img_layer">
-                <p>نُسهل الطريق أمام المستثمرين، من خلال توفير أهـم الفـرص الاستثمــارية المتــاحة،</p>
+                <p>
+                  نُسهل الطريق أمام المستثمرين، من خلال توفير أهـم الفـرص
+                  الاستثمــارية المتــاحة،
+                </p>
               </div>
             </div>
             <pre>الفرص الاستثمارية</pre>

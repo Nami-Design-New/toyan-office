@@ -81,10 +81,10 @@ nav .nav-items .nav-item .nav-link {
   transition: 0.3s ease-in-out;
 }
 nav .nav-items .nav-item .nav-link.active, nav .nav-items .nav-item .nav-link:hover {
-  background: linear-gradient(261.15deg, #f1b048 29.34%, #a36709 1023.47%);
-  background-clip: text;
+  background: linear-gradient(267.28deg, #f1b048 -27.68%, #a36709 129.01%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 nav .nav-items .nav-item .nav-link.icon {
   display: flex;
@@ -192,6 +192,24 @@ header .swiper .swiper-slide .decription p {
   font-size: 18px;
   color: #ffffff;
 }
+header .swiper .swiper-slide .right {
+  right: 0;
+  bottom: 0;
+  width: 48%;
+  position: absolute;
+  background-size: 100% 100%;
+  height: calc(100% - 100px);
+  background-image: url("assets/right_circles.png");
+}
+header .swiper .swiper-slide .left {
+  top: 0;
+  left: 0;
+  width: 48%;
+  position: absolute;
+  background-size: 100% 100%;
+  height: calc(100% - 100px);
+  background-image: url("assets/left_circles.png");
+}
 header .swiper .swiper-pagination-bullets {
   height: 40px;
   display: flex !important;
@@ -227,10 +245,10 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
 }
 .about .description h1 {
   margin: 15px 0 30px 0;
-  background: linear-gradient(261.15deg, #f1b048 29.34%, #a36709 1023.47%);
-  background-clip: text;
+  background: linear-gradient(267.28deg, #f1b048 -27.68%, #a36709 129.01%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-size: 30px;
 }
 .about .description p {
@@ -471,10 +489,10 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
 }
 .clients .mySwiper .swiper-button-next::after,
 .clients .mySwiper .swiper-button-prev::after {
-  background: linear-gradient(261.15deg, #f1b048 29.34%, #a36709 1023.47%);
-  background-clip: text;
+  background: linear-gradient(267.28deg, #f1b048 -27.68%, #a36709 129.01%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /*******home-end********/
@@ -500,10 +518,10 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
   align-items: center;
 }
 .employ_header .path_desc h2 {
-  background: linear-gradient(261.15deg, #f1b048 29.34%, #a36709 1023.47%);
-  background-clip: text;
+  background: linear-gradient(267.28deg, #f1b048 -27.68%, #a36709 129.01%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-size: 16px;
 }
 .employ_header .path_desc span {
@@ -521,10 +539,10 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
 }
 .employ_form h3 {
   padding-bottom: 30px;
-  background: linear-gradient(261.15deg, #f1b048 29.34%, #a36709 1023.47%);
-  background-clip: text;
+  background: linear-gradient(267.28deg, #f1b048 -27.68%, #a36709 129.01%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-size: 24px;
 }
 .employ_form form {
@@ -601,74 +619,178 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
 }
 
 /*******employ-end*****/
-/******news-section****/
-.news {
+/******knowlege-start**/
+.know_header {
   width: 100%;
-  height: 330px;
-  padding: 100px 170px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  flex-direction: column;
-  background-repeat: no-repeat;
+  height: 320px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}
+.know_header .image {
+  width: 100%;
+  height: 270px;
+  background-size: 100%;
   background-image: url("assets/news.png");
+  background-position: 50% 60%;
 }
-.news .label {
-  width: 600px;
-  height: 40px;
-  border-radius: 15px;
+.know_header .path_desc {
+  width: 100%;
+  height: 50px;
+  padding: 0 120px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 46px;
-  background: rgba(2, 2, 2, 0.4);
 }
-.news .label p {
-  font-size: 20px;
-  background: linear-gradient(261.15deg, #f1b048 29.34%, #a36709 1023.47%);
-  background-clip: text;
+.know_header .path_desc h2 {
+  background: linear-gradient(267.28deg, #f1b048 -27.68%, #a36709 129.01%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 16px;
 }
-.news form {
+.know_header .path_desc span {
+  margin-left: 8px;
+  font-size: 20px;
+}
+
+.inner_routes_holder {
+  padding: 80px 120px;
+}
+.inner_routes_holder .blogs_grid {
+  display: grid;
+  gap: 80px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.inner_routes_holder .blogs_grid .blog {
+  height: 300px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+.inner_routes_holder .blogs_grid .blog img {
   width: 100%;
-  display: flex;
-  gap: 20px;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-.news form input {
-  width: 80%;
-  height: 44px;
-  border-radius: 0 15px 15px 0;
-  border: none;
-  background: none;
-  outline: none;
-  background-color: #ffffff;
-  padding: 0 15px;
+.inner_routes_holder .blogs_grid .blog .laer {
+  width: 100%;
+  height: 110px;
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0 20px;
 }
-.news form input::-moz-placeholder {
-  color: #c4c4c4;
-}
-.news form input::placeholder {
-  color: #c4c4c4;
-}
-.news form button {
-  border: none;
-  background: none;
-  outline: none;
-  height: 44px;
-  width: calc(20% - 20px);
-  border-radius: 15px 0 0 15px;
-  background: linear-gradient(268.08deg, #f1b048 0%, #a36709 100%);
-  cursor: pointer;
+.inner_routes_holder .blogs_grid .blog .laer h4 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 37px;
   color: #ffffff;
-  font-size: 18px;
+  text-align: center;
+  padding-top: 10px;
+}
+.inner_routes_holder .blogs_grid .blog .laer a {
+  color: #ffffff;
+  font-size: 10px;
+  display: block;
+  line-height: 30px;
+}
+.inner_routes_holder .blogs_grid .blog .laer .line {
+  width: 100%;
+  height: 1px;
+  background-color: #4c4c4c;
+  display: block;
+}
+.inner_routes_holder .blogs_grid .blog .laer .date {
+  font-size: 10px;
+  color: #ffffff;
+  display: block;
+  line-height: 25px;
+}
+
+/******knowlege-end****/
+/******Contact-start****/
+.contact_header {
+  width: 100%;
+  height: 320px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}
+.contact_header .image {
+  width: 100%;
+  height: 270px;
+  background-size: 100%;
+  background-image: url("assets/contact.jpg");
+  background-position: 50% 35%;
+}
+.contact_header .path_desc {
+  width: 100%;
+  height: 50px;
+  padding: 0 120px;
+  display: flex;
+  align-items: center;
+}
+.contact_header .path_desc h2 {
+  background: linear-gradient(267.28deg, #f1b048 -27.68%, #a36709 129.01%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 16px;
+}
+.contact_header .path_desc span {
+  margin-left: 8px;
+  font-size: 20px;
+}
+
+.info {
+  gap: 220px;
+  width: 100%;
+  height: 180px;
+  display: grid;
+  padding: 0 120px;
+  margin-bottom: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.info .info_card {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-top: 40px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+.info .info_card:hover {
+  border-color: #a36709;
+}
+.info .info_card h4 {
+  background: linear-gradient(267.28deg, #f1b048 -27.68%, #a36709 129.01%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 20px;
+}
+.info .info_card a {
+  line-height: 28px;
+  display: block;
+  color: #4c4c4c;
+  direction: ltr;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+}
+.info .info_card a:hover {
+  background: linear-gradient(267.28deg, #f1b048 -27.68%, #a36709 129.01%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.info .info_card p {
+  line-height: 30px;
+  color: #4c4c4c;
+  text-align: center;
 }
 
+/******Contact-end******/
 /******footer-start****/
 footer {
   width: 100%;
@@ -715,10 +837,10 @@ footer .footer_grid .services ul li a {
   transition: 0.3s ease-in-out;
 }
 footer .footer_grid .services ul li a:hover {
-  background: linear-gradient(261.15deg, #f1b048 29.34%, #a36709 1023.47%);
-  background-clip: text;
+  background: linear-gradient(267.28deg, #f1b048 -27.68%, #a36709 129.01%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 footer .line {
   width: 100%;
@@ -741,10 +863,77 @@ footer .contact a {
 }
 footer .contact a:hover {
   transition: 0.3s ease-in-out;
-  background: linear-gradient(261.15deg, #f1b048 29.34%, #a36709 1023.47%);
-  background-clip: text;
+  background: linear-gradient(267.28deg, #f1b048 -27.68%, #a36709 129.01%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/******footer-end*******//*# sourceMappingURL=global.css.map */
+/******footer-end*******/
+/******news-section****/
+.news {
+  width: 100%;
+  height: 330px;
+  padding: 100px 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-image: url("assets/news.png");
+}
+.news .label {
+  width: 600px;
+  height: 40px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 46px;
+  background: rgba(2, 2, 2, 0.4);
+}
+.news .label p {
+  font-size: 20px;
+  background: linear-gradient(267.28deg, #f1b048 -27.68%, #a36709 129.01%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.news form {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+.news form input {
+  width: 80%;
+  height: 44px;
+  border-radius: 0 15px 15px 0;
+  border: none;
+  background: none;
+  outline: none;
+  background-color: #ffffff;
+  padding: 0 15px;
+}
+.news form input::-moz-placeholder {
+  color: #c4c4c4;
+}
+.news form input::placeholder {
+  color: #c4c4c4;
+}
+.news form button {
+  border: none;
+  background: none;
+  outline: none;
+  height: 44px;
+  width: calc(20% - 20px);
+  border-radius: 15px 0 0 15px;
+  background: linear-gradient(268.08deg, #f1b048 0%, #a36709 100%);
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}/*# sourceMappingURL=global.css.map */
