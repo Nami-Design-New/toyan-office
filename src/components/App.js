@@ -9,10 +9,12 @@ import Knowlege from "./Knowlege";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import Article from "./Article";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   return (
     <div className="App">
+      <ToastContainer position="top-right" rtl={true} />
       <Nav />
       <div className="app-holder">
         <Routes>

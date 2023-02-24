@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 const RequestForm = () => {
   const button = useRef(null);
   const hiddenArea = useRef(null);
@@ -17,11 +18,18 @@ const RequestForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     if (toogle === false) {
-      axios.request(requestOptions).then(res => {
-        setToogle(true);
-        hiddenArea.current.style.display = "flex";
-        button.current.innerHTML = "طلب خدمة أخرى";
-      });
+      axios
+        .request(requestOptions)
+        .then(() => {
+          setToogle(true);
+          hiddenArea.current.style.display = "flex";
+          button.current.innerHTML = "طلب خدمة أخرى";
+        })
+        .catch(err => {
+          console.error(err);
+          document.getElementById("form").reset();
+          toast.error("حاول مره اخرى");
+        });
     } else {
       document.getElementById("form").reset();
       hiddenArea.current.style.display = "none";

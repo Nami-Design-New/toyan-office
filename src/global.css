@@ -1174,4 +1174,9 @@ footer .contact a:hover {
   align-items: center;
   justify-content: center;
   background: linear-gradient(268.08deg, #f1b048 0%, #a36709 100%);
+}
+
+.Toastify {
+  position: relative;
+  z-index: 9999999999999;
 }/*# sourceMappingURL=global.css.map */

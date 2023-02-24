@@ -5,7 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import App from "./components/App";
 import "./i18next";
 import "./global.css";
-
+import "../node_modules/react-toastify/dist/ReactToastify.css";
 import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
