@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
+import RequestForm from "./RequestForm";
 import News from "./News";
 import Map from "./Map";
 const Contact = () => {
-  const [formData, setFormData] = useState({});
   return (
     <React.Fragment>
       <header className="contact_header">
@@ -17,47 +16,7 @@ const Contact = () => {
       </header>
       <div className="map">
         <div className="form">
-          <form action="">
-            <input
-              required
-              type="text"
-              name="name"
-              placeholder="الاسم"
-              onChange={e => setFormData({ ...formData, name: e.target.value })}
-            />
-            <input
-              required
-              type="email"
-              name="email"
-              placeholder="البريد الالكتروني"
-              onChange={e =>
-                setFormData({ ...formData, email: e.target.value })}
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="رقم الهاتف"
-              required
-              onChange={e =>
-                setFormData({ ...formData, phone: e.target.value })}
-            />
-            <input
-              required
-              type="text"
-              name="service-type"
-              placeholder="نوع الخدمة"
-              onChange={e =>
-                setFormData({ ...formData, serviceType: e.target.value })}
-            />
-            <textarea
-              name="message"
-              placeholder="محتوى رسالتك"
-              required
-              onChange={e =>
-                setFormData({ ...formData, message: e.target.value })}
-            />
-            <button type="submit">إرسال</button>
-          </form>
+          <RequestForm />
         </div>
         <Map />
       </div>
