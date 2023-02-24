@@ -1,7 +1,7 @@
 import React from "react";
-import RequestForm from "./RequestForm";
 import News from "./News";
 import Map from "./Map";
+import RequestForm from "./RequestForm";
 const Contact = () => {
   return (
     <React.Fragment>
