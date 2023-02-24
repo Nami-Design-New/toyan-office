@@ -8,6 +8,7 @@ import Employ from "./Employ";
 import Knowlege from "./Knowlege";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import Article from "./Article";
 
 const App = () => {
   return (
@@ -16,10 +17,11 @@ const App = () => {
       <div className="app-holder">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="services" element={<Services />} />
-          <Route path="clients" element={<Clients />} />
-          <Route path="employment" element={<Employ />} />
-          <Route path="knowlege" element={<Knowlege />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/clients" element={<Clients />} />
+          <Route path="/employment" element={<Employ />} />
+          <Route path="/knowlege" element={<Knowlege />} />
+          <Route path="/knowlege/:name?" element={<Article />} />
           <Route path="contact" element={<Contact />} />
         </Routes>
       </div>

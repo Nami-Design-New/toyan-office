@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import News from "./News";
 import blog from "../assets/blog1.jpg";
 const Knowlege = () => {
@@ -14,26 +14,18 @@ const Knowlege = () => {
           </h2>
         </div>
       </header>
-      <div className="inner_routes_holder">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <section className="blogs_grid">
-                <div className="blog">
-                  <img src={blog} alt="blog1" />
-                  <div className="laer">
-                    <h4>أهمية الوقت في خطة العمل</h4>
-                    <Link to="/knowlege/time-importance">{`اقرأ المزيد <<`}</Link>
-                    <span className="line" />
-                    <span className="date">10 - فبراير - 2023</span>
-                  </div>
-                </div>
-              </section>
-            }
-          />
-          <Route path=":time-importance" element={<div />} />
-        </Routes>
+      <div className="inner_holder">
+        <section className="blogs_grid">
+          <div className="blog">
+            <img src={blog} alt="blog1" />
+            <div className="laer">
+              <h4>أهمية الوقت في خطة العمل</h4>
+              <Link to="/knowlege/time-importance">{`اقرأ المزيد <<`}</Link>
+              <span className="line" />
+              <span className="date">10 - فبراير - 2023</span>
+            </div>
+          </div>
+        </section>
       </div>
       <News />
     </React.Fragment>
