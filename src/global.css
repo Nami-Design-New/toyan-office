@@ -49,7 +49,7 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-image: linear-gradient(261.15deg, #f1b048 29.34%, #a36709 1023.47%);
+  background: #a36709;
 }
 
 /********************************************/
