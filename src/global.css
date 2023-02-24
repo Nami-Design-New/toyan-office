@@ -457,53 +457,9 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
   justify-content: space-between;
   flex-direction: column;
 }
-.ask_service .ask_form form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 100%;
-}
-.ask_service .ask_form form input {
-  height: 35px;
-  border-radius: 10px;
-  border: none;
-  background: none;
-  outline: none;
-  background-color: #ffffff;
-  padding: 0 12px;
-}
-.ask_service .ask_form form input::-moz-placeholder {
-  color: #c4c4c4;
-}
-.ask_service .ask_form form input::placeholder {
-  color: #c4c4c4;
-}
+.ask_service .ask_form form input,
 .ask_service .ask_form form textarea {
-  height: 100px;
-  padding: 0 12px;
-  border-radius: 10px;
-  outline: none;
-  border: none;
-}
-.ask_service .ask_form form textarea::-moz-placeholder {
-  color: #c4c4c4;
-}
-.ask_service .ask_form form textarea::placeholder {
-  color: #c4c4c4;
-}
-.ask_service .ask_form form button {
-  width: 180px;
-  height: 40px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  background: linear-gradient(268.08deg, #f1b048 0%, #a36709 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-size: 16px;
-  cursor: pointer;
+  background-color: #ffffff !important;
 }
 
 .clients {
@@ -947,55 +903,6 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
   padding: 50px 120px;
   background-color: #e6e6e6;
 }
-.map .form form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 100%;
-}
-.map .form form input {
-  height: 35px;
-  border-radius: 10px;
-  border: none;
-  background: none;
-  outline: none;
-  background-color: #c4c4c4;
-  padding: 0 12px;
-}
-.map .form form input::-moz-placeholder {
-  color: #4c4c4c;
-}
-.map .form form input::placeholder {
-  color: #4c4c4c;
-}
-.map .form form textarea {
-  background-color: #c4c4c4;
-  height: 100px;
-  padding: 0 12px;
-  border-radius: 10px;
-  outline: none;
-  border: none;
-}
-.map .form form textarea::-moz-placeholder {
-  color: #4c4c4c;
-}
-.map .form form textarea::placeholder {
-  color: #4c4c4c;
-}
-.map .form form button {
-  width: 180px;
-  height: 40px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  background: linear-gradient(268.08deg, #f1b048 0%, #a36709 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-size: 16px;
-  cursor: pointer;
-}
 .map .map_layer {
   width: 50%;
   height: inherit;
@@ -1051,7 +958,7 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
   text-align: center;
 }
 
-/******footer-start****/
+/* *****footer-start*** */
 footer {
   width: 100%;
   height: 460px;
@@ -1129,7 +1036,7 @@ footer .contact a:hover {
   background-clip: text;
 }
 
-/******news-section****/
+/* *****news-section*** */
 .news {
   width: 100%;
   height: 330px;
@@ -1195,4 +1102,76 @@ footer .contact a:hover {
   align-items: center;
   justify-content: center;
   gap: 5px;
+}
+
+/*****send request*******/
+.sendmessage {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+.sendmessage input {
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  background: none;
+  outline: none;
+  background-color: #c4c4c4;
+  padding: 0 12px;
+}
+.sendmessage input::-moz-placeholder {
+  color: #4c4c4c;
+}
+.sendmessage input::placeholder {
+  color: #4c4c4c;
+}
+.sendmessage textarea {
+  background-color: #c4c4c4;
+  height: 100px;
+  padding: 0 12px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+}
+.sendmessage textarea::-moz-placeholder {
+  color: #4c4c4c;
+}
+.sendmessage textarea::placeholder {
+  color: #4c4c4c;
+}
+.sendmessage .submit_area {
+  width: 100%;
+  display: flex;
+  gap: 5%;
+}
+.sendmessage .submit_area .submited {
+  width: 50%;
+  height: 40px;
+  pointer-events: none;
+  border: 1px solid #a36709;
+  border-radius: 10px;
+  background: linear-gradient(267.28deg, #f1b048 -27.68%, #a36709 129.01%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  display: none;
+}
+.sendmessage .submit_area button {
+  width: 45%;
+  height: 40px;
+  border: none;
+  color: #ffffff;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(268.08deg, #f1b048 0%, #a36709 100%);
 }/*# sourceMappingURL=global.css.map */

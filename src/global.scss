@@ -459,41 +459,9 @@ header {
     @include space-between();
     flex-direction: column;
     form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      width: 100%;
-      input {
-        height: 35px;
-        border-radius: 10px;
-        @include clearInput();
-        background-color: $white;
-        padding: 0 12px;
-        &::placeholder {
-          color: $gray1;
-        }
-      }
+      input,
       textarea {
-        height: 100px;
-        padding: 0 12px;
-        border-radius: 10px;
-        &::placeholder {
-          color: $gray1;
-        }
-        outline: none;
-        border: none;
-      }
-      button {
-        width: 180px;
-        height: 40px;
-        border-radius: 10px;
-        border: none;
-        outline: none;
-        background: $gold_gradient2;
-        @include centerFlex();
-        color: $white;
-        font-size: 16px;
-        cursor: pointer;
+        background-color: $white !important;
       }
     }
   }
@@ -884,45 +852,6 @@ header {
     width: 50%;
     padding: 50px 120px;
     background-color: $gray0;
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      width: 100%;
-      input {
-        height: 35px;
-        border-radius: 10px;
-        @include clearInput();
-        background-color: $gray1;
-        padding: 0 12px;
-        &::placeholder {
-          color: $gray2;
-        }
-      }
-      textarea {
-        background-color: $gray1;
-        height: 100px;
-        padding: 0 12px;
-        border-radius: 10px;
-        &::placeholder {
-          color: $gray2;
-        }
-        outline: none;
-        border: none;
-      }
-      button {
-        width: 180px;
-        height: 40px;
-        border-radius: 10px;
-        border: none;
-        outline: none;
-        background: $gold_gradient2;
-        @include centerFlex();
-        color: $white;
-        font-size: 16px;
-        cursor: pointer;
-      }
-    }
   }
   .map_layer {
     width: 50%;
@@ -970,8 +899,7 @@ header {
     }
   }
 }
-
-/******footer-start****/
+/* *****footer-start*** */
 footer {
   width: 100%;
   height: 460px;
@@ -1040,8 +968,7 @@ footer {
     }
   }
 }
-
-/******news-section****/
+/* *****news-section*** */
 .news {
   width: 100%;
   height: 330px;
@@ -1089,6 +1016,62 @@ footer {
       font-size: 18px;
       @include centerFlex();
       gap: 5px;
+    }
+  }
+}
+/*****send request*******/
+.sendmessage {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  input {
+    height: 35px;
+    border-radius: 10px;
+    @include clearInput();
+    background-color: $gray1;
+    padding: 0 12px;
+    &::placeholder {
+      color: $gray2;
+    }
+  }
+  textarea {
+    background-color: $gray1;
+    height: 100px;
+    padding: 0 12px;
+    border-radius: 10px;
+    &::placeholder {
+      color: $gray2;
+    }
+    outline: none;
+    border: none;
+  }
+  .submit_area {
+    width: 100%;
+    display: flex;
+    gap: 5%;
+    .submited {
+      width: 50%;
+      height: 40px;
+      pointer-events: none;
+      border: 1px solid $gold2;
+      border-radius: 10px;
+      @include grad-text();
+      @include centerFlex();
+      font-weight: 600;
+      display: none;
+    }
+    button {
+      width: 45%;
+      height: 40px;
+      border: none;
+      color: $white;
+      outline: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 10px;
+      @include centerFlex();
+      background: $gold_gradient2;
     }
   }
 }

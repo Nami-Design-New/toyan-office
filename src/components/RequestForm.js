@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
 const RequestForm = () => {
+  const button = useRef(null);
+  const hiddenArea = useRef(null);
   const [formData, setFormData] = useState({});
+  const [toogle, setToogle] = useState(false);
   let headersList = {
     Accept: "/"
   };
@@ -13,10 +16,20 @@ const RequestForm = () => {
   };
   const handleSubmit = e => {
     e.preventDefault();
-    axios.request(requestOptions);
+    if (toogle === false) {
+      axios.request(requestOptions).then(res => {
+        setToogle(true);
+        hiddenArea.current.style.display = "flex";
+        button.current.innerHTML = "طلب خدمة أخرى";
+      });
+    } else {
+      document.getElementById("form").reset();
+      hiddenArea.current.style.display = "none";
+      button.current.innerHTML = "إرسال";
+    }
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="sendmessage" id="form" onSubmit={handleSubmit}>
       <input
         required
         type="text"
@@ -53,10 +66,12 @@ const RequestForm = () => {
         onChange={e => setFormData({ ...formData, message: e.target.value })}
       />
       <div className="submit_area">
-        <div className="submited">
+        <div className="submited" ref={hiddenArea}>
           <span>تم إرسال الطلب بنجاح</span>
         </div>
-        <button type="submit">إرسال</button>
+        <button ref={button} type="submit">
+          إرسال
+        </button>
       </div>
     </form>
   );

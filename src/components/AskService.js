@@ -1,4 +1,5 @@
 import React from "react";
+import RequestForm from "./RequestForm";
 
 const AskService = () => {
   return (
@@ -23,24 +24,7 @@ const AskService = () => {
       </div>
       <div className="ask_form">
         <h3>ارسل طلبك الان</h3>
-        <form action="">
-          <input type="text" name="name" placeholder="الاسم" required />
-          <input
-            type="email"
-            name="email"
-            placeholder="البريد الالكتروني"
-            required
-          />
-          <input type="tel" name="phone" placeholder="رقم الهاتف" required />
-          <input
-            type="text"
-            name="service-type"
-            placeholder="نوع الخدمة"
-            required
-          />
-          <textarea name="message" placeholder="محتوى رسالتك" required />
-          <button type="submit">إرسال</button>
-        </form>
+        <RequestForm />
       </div>
     </section>
   );
