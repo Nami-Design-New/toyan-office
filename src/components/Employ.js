@@ -1,6 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+import { toast } from "react-toastify";
+import axios from "axios";
 import News from "./News";
 const Employ = () => {
+  const [formData, setFormData] = useState({});
+  let headersList = {
+    Accept: "/",
+    "Content-Type": "multipart/form-data"
+  };
+  let requestOptions = {
+    url: "https://el-twyan.onrender.com/api/v1/apply",
+    method: "POST",
+    headers: headersList,
+    data: formData
+  };
+  const handleSubmit = e => {
+    e.preventDefault();
+    axios
+      .request(requestOptions)
+      .then(() => {
+        document.getElementById("apply_form").reset();
+        toast.success("تم تقديم طلب انتظر الرد قريبًا");
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById("apply_form").reset();
+        toast.error("حاول مره اخرى");
+      });
+  };
   return (
     <React.Fragment>
       <header className="employ_header">
@@ -14,15 +41,28 @@ const Employ = () => {
       </header>
       <section className="employ_form">
         <h3>قدم على وظيفتك</h3>
-        <form action="">
-          <input type="text" name="name" placeholder="الاسم كاملاً" required />
+        <form id="apply_form" onSubmit={handleSubmit}>
           <input
+            type="text"
+            name="name"
+            placeholder="الاسم كاملاً"
+            required
+            onChange={e => setFormData({ ...formData, name: e.target.value })}
+          />
+          <input
+            required
             type="email"
             name="email"
             placeholder="البريد الالكتروني"
-            required
+            onChange={e => setFormData({ ...formData, email: e.target.value })}
           />
-          <input type="tel" name="phone" placeholder="رقم الهاتف" required />
+          <input
+            type="tel"
+            name="phone"
+            placeholder="رقم الهاتف"
+            required
+            onChange={e => setFormData({ ...formData, phone: e.target.value })}
+          />
           <div className="file_feild">
             <p>رفع السيرة الذاتية</p>
             <input
@@ -32,9 +72,19 @@ const Employ = () => {
               className="file_in"
               placeholder="رفع السيرة الذاتية"
               accept="application/pdf, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+              onChange={e => {
+                console.log(e.target.files[0]);
+                setFormData({ ...formData, resume: e.target.files[0] });
+              }}
             />
           </div>
-          <textarea name="message" placeholder="رسالة" required />
+          <textarea
+            name="message"
+            placeholder="رسالة"
+            required
+            onChange={e =>
+              setFormData({ ...formData, message: e.target.value })}
+          />
           <button type="submit">إرسال</button>
         </form>
       </section>

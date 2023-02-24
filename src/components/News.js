@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import vector from "../assets/Vector.png";
 import axios from "axios";
 import { toast } from "react-toastify";
+import vector from "../assets/Vector.png";
 const News = () => {
   const [formData, setFormData] = useState({});
   let headersList = {
@@ -38,7 +38,7 @@ const News = () => {
           required
           name="email"
           placeholder="البـريد الإلكتروني"
-          onChange={e => setFormData({ ...formData, name: e.target.value })}
+          onChange={e => setFormData({ ...formData, email: e.target.value })}
         />
         <button type="submit">
           اشتراك<img src={vector} alt="send" />
