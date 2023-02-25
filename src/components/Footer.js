@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/footer_logo.png";
-const Footer = () => {
+const Footer = ({ services }) => {
   return (
     <footer>
       <div className="footer_grid">
@@ -22,34 +22,15 @@ const Footer = () => {
         <div className="col services">
           <h3>خدماتنا</h3>
           <ul>
-            <li>
-              <Link to="/services">دراسة جدوى اقتصادية</Link>
-            </li>
-            <li>
-              <Link to="/services/legal-advices">استشارات قانونية</Link>
-            </li>
-            <li>
-              <Link to="/services/administrative-advices">استشارات إدارية</Link>
-            </li>
-            <li>
-              <Link to="/services/business-services">خدمات الأعمال</Link>
-            </li>
-            <li>
-              <Link to="/services/foreign-investments">الاستثمار الأجنبي</Link>
-            </li>
-            <li>
-              <Link to="/services/investment-opportunities">
-                الفرص الاستثمارية
-              </Link>
-            </li>
-            <li>
-              <Link to="/services/preperaing-work-plans">إعداد خطط العمل</Link>
-            </li>
-            <li>
-              <Link to="/services/feasibility-study-for-financing-agencies">
-                دراسة جدوى للجهات التمويلية
-              </Link>
-            </li>
+            {services.map(ser => {
+              return (
+                <li>
+                  <Link to={`/services/${ser.title.en}`}>
+                    {ser.title.ar}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
