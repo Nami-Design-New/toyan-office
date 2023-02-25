@@ -24,6 +24,7 @@ const RequestForm = () => {
           setToogle(true);
           hiddenArea.current.style.display = "flex";
           button.current.innerHTML = "طلب خدمة أخرى";
+          toast.success("تم إرسال الطلب بنجاح")
         })
         .catch(err => {
           console.error(err);

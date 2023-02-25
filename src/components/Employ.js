@@ -20,7 +20,7 @@ const Employ = () => {
       .request(requestOptions)
       .then(() => {
         document.getElementById("apply_form").reset();
-        toast.success("تم تقديم طلب انتظر الرد قريبًا");
+        toast.success("تم التقديم انتظر الرد قريبًا");
       })
       .catch(err => {
         console.error(err);
@@ -47,7 +47,8 @@ const Employ = () => {
             name="name"
             placeholder="الاسم كاملاً"
             required
-            onChange={e => setFormData({ ...formData, name: e.target.value })}
+            onChange={e =>
+              setFormData({ ...formData, fullName: e.target.value })}
           />
           <input
             required
