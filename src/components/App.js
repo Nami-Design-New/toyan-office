@@ -1,6 +1,6 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import Nav from "./Nav";
+import axios from "axios";
 import Home from "./Home";
 import Services from "./Services";
 import Clients from "./Clients";
@@ -10,24 +10,63 @@ import Contact from "./Contact";
 import Footer from "./Footer";
 import Article from "./Article";
 import { ToastContainer } from "react-toastify";
+import { Routes, Route } from "react-router-dom";
 
 const App = () => {
+  const [header, setHeader] = useState([]);
+  const [clients, setClients] = useState([]);
+  const [services, setServices] = useState([]);
+  useEffect(() => {
+    const clientsFetch = async () => {
+      let { data } = await axios.get(
+        "https://el-twyan.onrender.com/api/v1/clients"
+      );
+      setClients(data.data);
+    };
+    clientsFetch();
+  }, []);
+  useEffect(() => {
+    const sliderFetch = async () => {
+      let { data } = await axios.get(
+        "https://el-twyan.onrender.com/api/v1/slider"
+      );
+      setHeader(data.data);
+    };
+    sliderFetch();
+  }, []);
+  useEffect(() => {
+    const servicesFetch = async () => {
+      let { data } = await axios.get(
+        "https://el-twyan.onrender.com/api/v1/services"
+      );
+      setServices(data.data);
+    };
+    servicesFetch();
+  }, []);
   return (
     <div className="App">
       <ToastContainer position="top-right" rtl={true} />
-      <Nav />
+      <Nav services={services} />
       <div className="app-holder">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/clients" element={<Clients />} />
+          <Route
+            path="/"
+            element={
+              <Home slider={header} services={services} clients={clients} />
+            }
+          />
+          <Route
+            path="/services/:name?"
+            element={<Services services={services} />}
+          />
+          <Route path="/clients" element={<Clients clients={clients} />} />
           <Route path="/employment" element={<Employ />} />
           <Route path="/knowlege" element={<Knowlege />} />
           <Route path="/knowlege/:name?" element={<Article />} />
           <Route path="contact" element={<Contact />} />
         </Routes>
       </div>
-      <Footer />
+      <Footer services={services} />
     </div>
   );
 };
