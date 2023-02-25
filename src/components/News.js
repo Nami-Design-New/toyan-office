@@ -21,8 +21,7 @@ const News = () => {
         document.getElementById("news_form").reset();
         toast.success("تم الاشتراك بنجاح");
       })
-      .catch(err => {
-        console.error(err);
+      .catch(() => {
         document.getElementById("news_form").reset();
         toast.error("حاول مره اخرى");
       });
