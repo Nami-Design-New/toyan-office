@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import AskService from "./AskService";
-import img from "../assets/cleintpng.png";
-const Clients = () => {
+
+const Clients = ({ clients }) => {
+  console.log(clients);
+  const [start, setStart] = useState(0);
+  const [stop, setStop] = useState(12);
+  const handleClick = () => {
+    if (stop < clients.length) {
+      setStart(start + 12);
+      setStop(stop + 12);
+    }
+  };
   return (
     <React.Fragment>
       <header className="clients_header">
@@ -14,46 +23,17 @@ const Clients = () => {
         </div>
       </header>
       <main className="clients_gird">
-        <div className="client_card">
-          <img src={img} alt="" />
-        </div>
-        <div className="client_card">
-          <img src={img} alt="" />
-        </div>
-        <div className="client_card">
-          <img src={img} alt="" />
-        </div>
-        <div className="client_card">
-          <img src={img} alt="" />
-        </div>
-        <div className="client_card">
-          <img src={img} alt="" />
-        </div>
-        <div className="client_card">
-          <img src={img} alt="" />
-        </div>
-        <div className="client_card">
-          <img src={img} alt="" />
-        </div>
-        <div className="client_card">
-          <img src={img} alt="" />
-        </div>
-        <div className="client_card">
-          <img src={img} alt="" />
-        </div>
-        <div className="client_card">
-          <img src={img} alt="" />
-        </div>
-        <div className="client_card">
-          <img src={img} alt="" />
-        </div>
-        <div className="client_card">
-          <img src={img} alt="" />
-        </div>
-        
-        <button title="load more">
-          <i className="fas fa-chevron-down" />
-        </button>
+        {clients.slice(start, stop).map(client => {
+          return (
+            <div className="client_card" loading="lazy" key={client._id}>
+              <img src={client.image} alt={client.title} />
+            </div>
+          );
+        })}
+        {clients.length > 12 &&
+          <button title="load more" onClick={handleClick}>
+            <i className="fas fa-chevron-down" />
+          </button>}
       </main>
       <AskService />
     </React.Fragment>
