@@ -516,6 +516,10 @@ header {
     h2 {
       @include grad-text();
       font-size: 16px;
+      display: flex;
+      p {
+        font-size: inherit;
+      }
     }
     span {
       margin-left: 8px;
@@ -586,6 +590,15 @@ header {
     border-radius: 10px;
     cursor: pointer;
     @include centerFlex();
+    img {
+      transition: all .5s ease-in-out;
+      filter: grayscale(1);
+    }
+    &:hover {
+      img {
+        filter: grayscale(0);
+      }
+    }
   }
   button {
     position: absolute;
@@ -1078,4 +1091,101 @@ footer {
 .Toastify {
   position: relative;
   z-index: 9999999999999;
+}
+@media (max-width: 450px) {
+  nav {
+    padding: 10px;
+    .nav-items {
+      display: none;
+    }
+  }
+  .about {
+    .description {
+      width: 100%;
+      padding: 0 30px;
+      padding-bottom: 40px;
+      h1 {
+        line-height: 50px;
+      }
+      p {
+        font-size: 22px;
+        line-height: 45px;
+      }
+    }
+    .wrapper {
+      width: 100%;
+    }
+    .about-flex {
+      flex-direction: column-reverse;
+    }
+    .about-grid {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 40px;
+    }
+  }
+  .services {
+    padding: 40px;
+    .services_grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  .ask_service {
+    flex-direction: column;
+    height: 100%;
+    padding: 30px;
+    .ask_descrip,
+    .ask_form {
+      width: 100%;
+    }
+  }
+  .clients {
+    padding: 40px 20px;
+    .mySwiper {
+      width: 100%;
+      padding: 20px 60px;
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        font-size: 26px;
+        font-weight: 600;
+      }
+    }
+  }
+  .news {
+    padding: 100px 30px;
+    .label {
+      width: 100%;
+      height: 100%;
+      p {
+        text-align: center;
+      }
+    }
+    form {
+      gap: 5%;
+      input {
+        width: 60%;
+      }
+      button {
+        width: 35%;
+      }
+    }
+  }
+  footer {
+    padding: 40px;
+    height: 100%;
+    .footer_grid {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 40px;
+      .col {
+        padding: 0;
+      }
+    }
+    .line {
+      margin: 35px 0;
+    }
+    .contact {
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+  }
 }

@@ -1,35 +1,19 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Link } from "react-router-dom";
-import { Autoplay, Pagination, Navigation, Mousewheel, Keyboard } from "swiper";
 import "swiper/css";
+import News from "./News";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import News from "./News";
+import AskService from "./AskService";
+import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation, Mousewheel, Keyboard } from "swiper";
+
 import ha from "../assets/ha.png";
 import me from "../assets/me.png";
 import la from "../assets/la.png";
 import about from "../assets/about.png";
 
-import home1 from "../assets/home1.jpg";
-import home2 from "../assets/home2.jpg";
-import home3 from "../assets/home3.jpg";
-import img2 from "../assets/service1.jpg";
-import img3 from "../assets/service2.jpg";
-import img4 from "../assets/service3.jpg";
-import img5 from "../assets/service4.jpg";
-import img6 from "../assets/service5.jpg";
-import img7 from "../assets/service6.jpg";
-import img8 from "../assets/service7.jpg";
-import img9 from "../assets/service8.jpg";
-import img10 from "../assets/client1.png";
-import img11 from "../assets/client2.png";
-import img12 from "../assets/client3.png";
-import img13 from "../assets/client4.png";
-import img14 from "../assets/client5.png";
-import AskService from "./AskService";
-
-const Home = () => {
+const Home = ({ slider, services, clients }) => {
   return (
     <React.Fragment>
       <header className="header-slider">
@@ -44,36 +28,24 @@ const Home = () => {
           modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <img src={home1} alt="" />
-            <div className="layer" />
-            <div className="right" />
-            <div className="left" />
-            <div className="decription">
-              <p>
-                مكتب عمر الطويـان للاستشـارات الإداريـة حاصل على الترخيص المهني
-                رقم 15384.
-              </p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={home2} alt="" />
-            <div className="layer" />
-            <div className="right" />
-            <div className="left" />
-            <div className="decription">
-              <p>نسعى للمشاركة في تحقيق رؤية المملكة 2030.</p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={home3} alt="" />
-            <div className="layer" />
-            <div className="right" />
-            <div className="left" />
-            <div className="decription">
-              <p>ندعم رواد الأعمال حتى الاحتراف</p>
-            </div>
-          </SwiperSlide>
+          {slider.map(slide => {
+            return (
+              <SwiperSlide key={slide._id}>
+                <img
+                  src={`https://el-twyan.onrender.com/images/${slide.image}`}
+                  alt={slide._id}
+                />
+                <div className="layer" />
+                <div className="right" />
+                <div className="left" />
+                <div className="decription">
+                  <p>
+                    {slide.text}
+                  </p>
+                </div>
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </header>
       <section className="about">
@@ -132,100 +104,27 @@ const Home = () => {
       <section className="services">
         <h2>خدمتنا</h2>
         <div className="services_grid">
-          <Link to="/services" className="service_card">
-            <div className="img">
-              <img loading="lazy" src={img2} alt="feasibility-study" />
-              <div className="img_layer">
-                <p>نسعـى لتقديم دراسات جدوى تفصيلية تدعم نجاح مشروعك.</p>
-              </div>
-            </div>
-            <pre>دراسة جدوى اقتصادية</pre>
-          </Link>
-          <Link to="/services/legal-advices" className="service_card">
-            <div className="img">
-              <img loading="lazy" src={img3} alt="legal-advices" />
-              <div className="img_layer">
-                <p>
-                  نقدم لكم كافة أنواع الاستشارات القانونية المتعلقة بشئون
-                  المؤسسات والشركات.
-                </p>
-              </div>
-            </div>
-            <pre>استشارات قانونية</pre>
-          </Link>
-          <Link to="/services/administrative-advices" className="service_card">
-            <div className="img">
-              <img loading="lazy" src={img4} alt="administrative-advices" />
-              <div className="img_layer">
-                <p>
-                  نقدم أفضــل الخدمــات الاستشـاريــةالمبتكرة والمتكاملة لجميع
-                  المستثمرين على النطاق المحلي والإقليمي والعالمي.
-                </p>
-              </div>
-            </div>
-            <pre>استشارات إدارية</pre>
-          </Link>
-          <Link to="/services/business-services" className="service_card">
-            <div className="img">
-              <img loading="lazy" src={img5} alt="feasibility-study" />
-              <div className="img_layer">
-                <p>
-                  تقدم كـافة خدمـات الأعمـال لتشـمل القطـاع الخــاص والعــام,
-                  والمنشــآت الصغيــرة والمتوسطة، ورواد الأعمال.
-                </p>
-              </div>
-            </div>
-            <pre>خدمات الأعمال</pre>
-          </Link>
-          <Link to="/services/foreign-investments" className="service_card">
-            <div className="img">
-              <img loading="lazy" src={img6} alt="feasibility-study" />
-              <div className="img_layer">
-                <p>
-                  نســاعـد المستثــمر الأجنبــي علـى الاستثمار الآمن داخل
-                  المملكة، من دراسـة الجدوى حتى بدايـة النشاط ونمو النشــاط
-                  وتطويره،
-                </p>
-              </div>
-            </div>
-            <pre>الاستثمار الأجنبي</pre>
-          </Link>
-          <Link to="/investment-opportunities" className="service_card">
-            <div className="img">
-              <img loading="lazy" src={img7} alt="feasibility-study" />
-              <div className="img_layer">
-                <p>
-                  نُسهل الطريق أمام المستثمرين، من خلال توفير أهـم الفـرص
-                  الاستثمــارية المتــاحة،
-                </p>
-              </div>
-            </div>
-            <pre>الفرص الاستثمارية</pre>
-          </Link>
-          <Link to="/services/preperaing-work-plans" className="service_card">
-            <div className="img">
-              <img loading="lazy" src={img8} alt="feasibility-study" />
-              <div className="img_layer">
-                <p>
-                  نقدم خدمـة إعداد خطط العمل ودراسـات الجـدوى بمـا يتوافـق مع
-                  متطلبات عملائنا وتطلعاتهم المستقبلية.
-                </p>
-              </div>
-            </div>
-            <pre>إعداد خطط العمل</pre>
-          </Link>
-          <Link
-            to="/services/feasibility-study-for-financing-agencies"
-            className="service_card"
-          >
-            <div className="img">
-              <img loading="lazy" src={img9} alt="feasibility-study" />
-              <div className="img_layer">
-                <p>لدينا الخبرة في التعامل مع كافة الجهات التمويلية.</p>
-              </div>
-            </div>
-            <pre>دراسة جدوى للجهات التمويلية</pre>
-          </Link>
+          {services.map(ser => {
+            return (
+              <Link
+                key={ser._id}
+                className="service_card"
+                to={`/services/${ser.title.en}`}
+              >
+                <div className="img">
+                  <img loading="lazy" src={ser.image} alt={ser.title.en} />
+                  <div className="img_layer">
+                    <p>
+                      {ser.subTitle.ar}
+                    </p>
+                  </div>
+                </div>
+                <pre>
+                  {ser.title.ar}
+                </pre>
+              </Link>
+            );
+          })}
         </div>
       </section>
       <AskService />
@@ -236,44 +135,32 @@ const Home = () => {
             clickable: true
           }}
           navigation={true}
-          slidesPerView={3}
-          // cssMode={true}
           spaceBetween={90}
+          breakpoints={{
+            0: {
+              slidesPerView: 1
+            },
+            576: {
+              slidesPerView: 2
+            },
+            768: {
+              slidesPerView: 3
+            }
+          }}
           className="mySwiper"
-          // mousewheel={true}
-          // keyboard={true}
           modules={[Navigation, Mousewheel, Keyboard]}
         >
-          <SwiperSlide className="swiper_card">
-            <img src={img10} alt="" />
-          </SwiperSlide>
-          <SwiperSlide className="swiper_card">
-            <img src={img11} alt="" />
-          </SwiperSlide>
-          <SwiperSlide className="swiper_card">
-            <img src={img12} alt="" />
-          </SwiperSlide>
-          <SwiperSlide className="swiper_card">
-            <img src={img13} alt="" />
-          </SwiperSlide>
-          <SwiperSlide className="swiper_card">
-            <img src={img14} alt="" />
-          </SwiperSlide>
-          <SwiperSlide className="swiper_card">
-            <img src={img10} alt="" />
-          </SwiperSlide>
-          <SwiperSlide className="swiper_card">
-            <img src={img11} alt="" />
-          </SwiperSlide>
-          <SwiperSlide className="swiper_card">
-            <img src={img12} alt="" />
-          </SwiperSlide>
-          <SwiperSlide className="swiper_card">
-            <img src={img13} alt="" />
-          </SwiperSlide>
-          <SwiperSlide className="swiper_card">
-            <img src={img14} alt="" />
-          </SwiperSlide>
+          {clients.map(client => {
+            return (
+              <SwiperSlide className="swiper_card" key={client._id}>
+                <img
+                  loading="lazy"
+                  src={`https://el-twyan.onrender.com/images/${client.image}`}
+                  alt={client.title}
+                />
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </section>
       <News />

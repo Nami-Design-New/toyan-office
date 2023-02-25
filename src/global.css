@@ -522,6 +522,10 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-size: 16px;
+  display: flex;
+}
+.services_header .path_desc h2 p {
+  font-size: inherit;
 }
 .services_header .path_desc span {
   margin-left: 8px;
@@ -601,6 +605,13 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.clients_gird .client_card img {
+  transition: all 0.5s ease-in-out;
+  filter: grayscale(1);
+}
+.clients_gird .client_card:hover img {
+  filter: grayscale(0);
 }
 .clients_gird button {
   position: absolute;
@@ -1179,4 +1190,100 @@ footer .contact a:hover {
 .Toastify {
   position: relative;
   z-index: 9999999999999;
+}
+
+@media (max-width: 450px) {
+  nav {
+    padding: 10px;
+  }
+  nav .nav-items {
+    display: none;
+  }
+  .about .description {
+    width: 100%;
+    padding: 0 30px;
+    padding-bottom: 40px;
+  }
+  .about .description h1 {
+    line-height: 50px;
+  }
+  .about .description p {
+    font-size: 22px;
+    line-height: 45px;
+  }
+  .about .wrapper {
+    width: 100%;
+  }
+  .about .about-flex {
+    flex-direction: column-reverse;
+  }
+  .about .about-grid {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 40px;
+  }
+  .services {
+    padding: 40px;
+  }
+  .services .services_grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .ask_service {
+    flex-direction: column;
+    height: 100%;
+    padding: 30px;
+  }
+  .ask_service .ask_descrip,
+  .ask_service .ask_form {
+    width: 100%;
+  }
+  .clients {
+    padding: 40px 20px;
+  }
+  .clients .mySwiper {
+    width: 100%;
+    padding: 20px 60px;
+  }
+  .clients .mySwiper .swiper-button-next::after,
+  .clients .mySwiper .swiper-button-prev::after {
+    font-size: 26px;
+    font-weight: 600;
+  }
+  .news {
+    padding: 100px 30px;
+  }
+  .news .label {
+    width: 100%;
+    height: 100%;
+  }
+  .news .label p {
+    text-align: center;
+  }
+  .news form {
+    gap: 5%;
+  }
+  .news form input {
+    width: 60%;
+  }
+  .news form button {
+    width: 35%;
+  }
+  footer {
+    padding: 40px;
+    height: 100%;
+  }
+  footer .footer_grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+  }
+  footer .footer_grid .col {
+    padding: 0;
+  }
+  footer .line {
+    margin: 35px 0;
+  }
+  footer .contact {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
 }/*# sourceMappingURL=global.css.map */
