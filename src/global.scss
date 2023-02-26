@@ -118,14 +118,6 @@ nav {
       color: $gray2;
     }
   }
-  &.opened {
-    height: 100vh;
-    align-items: flex-start;
-    background: $white;
-    .bars_btn i {
-      color: $gray2;
-    }
-  }
   .logo {
     height: unset;
     transition: none;
@@ -1122,6 +1114,51 @@ footer {
 }
 @media (max-width: 768px) {
   nav {
+    &.opened {
+      height: 100vh;
+      align-items: flex-start;
+      transition: none;
+      background: $white;
+      .bars_btn i {
+        color: $gray2;
+      }
+      .nav-items {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        gap: 10px;
+        top: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+        .drobdown {
+          // left: 50%;
+          // top: 33%;
+          // transform: translateX(-50%);
+          // z-index: 99999999999999;
+          display: none;
+        }
+        .nav-item .nav-link {
+          color: $gray2;
+          text-align: center;
+        }
+      }
+      .search-lang {
+        @include centerFlex();
+        position: absolute;
+        bottom: 10%;
+        width: 100%;
+        left: 0;
+        input {
+          left: 58%;
+        }
+        button {
+          color: $gray2;
+        }
+        span {
+          background-color: $gray2;
+        }
+      }
+    }
     padding: 10px 60px;
     .nav-items {
       display: none;

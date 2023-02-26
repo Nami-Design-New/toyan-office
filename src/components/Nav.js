@@ -6,6 +6,7 @@ const Nav = ({ services }) => {
   const nav = useRef(null);
   const drop = useRef(null);
   const search = useRef(null);
+  const navBtn = useRef(null);
   const [toggle, setToggle] = useState(false);
   const [open, setOpen] = useState(false);
   const handlemove = () => {
@@ -26,9 +27,13 @@ const Nav = ({ services }) => {
   const handleToggle = () => {
     if (open === false) {
       nav.current.classList.add("opened");
+      navBtn.current.classList.remove("fa-bars");
+      navBtn.current.classList.add("fa-times");
       setOpen(true);
     } else {
       nav.current.classList.remove("opened");
+      navBtn.current.classList.remove("fa-times");
+      navBtn.current.classList.add("fa-bars");
       setOpen(false);
     }
   };
@@ -48,7 +53,7 @@ const Nav = ({ services }) => {
       </div>
       <ul className="nav-items">
         <li className="nav-item">
-          <NavLink className="nav-link" to="/">
+          <NavLink onClick={handleToggle} className="nav-link" to="/">
             الرئيسية
           </NavLink>
         </li>
@@ -57,6 +62,7 @@ const Nav = ({ services }) => {
             to={`/services/`}
             onMouseMove={handlemove}
             onMouseLeave={handleLeave}
+            onClick={handleToggle}
             className="icon nav-link"
           >
             خدماتنا <i className="fa-solid fa-caret-down" />
@@ -81,28 +87,28 @@ const Nav = ({ services }) => {
           </div>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/clients">
+          <NavLink onClick={handleToggle} className="nav-link" to="/clients">
             عملاؤنا
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/employment">
+          <NavLink onClick={handleToggle} className="nav-link" to="/employment">
             التوظيف
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/knowlege">
+          <NavLink onClick={handleToggle} className="nav-link" to="/knowlege">
             المعرفة
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/contact">
+          <NavLink onClick={handleToggle} className="nav-link" to="/contact">
             اتصل بنا
           </NavLink>
         </li>
       </ul>
       <div className="bars_btn" onClick={handleToggle}>
-        <i className="fas fa-bars" />
+        <i ref={navBtn} className="fas fa-bars" />
       </div>
       <div className="search-lang">
         <input type="text" placeholder="ابحث عن خدمه" ref={search} />

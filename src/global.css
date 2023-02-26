@@ -92,14 +92,6 @@ nav.active .search-lang input::placeholder {
 nav.active .bars_btn i {
   color: #4c4c4c;
 }
-nav.opened {
-  height: 100vh;
-  align-items: flex-start;
-  background: #ffffff;
-}
-nav.opened .bars_btn i {
-  color: #4c4c4c;
-}
 nav .logo {
   height: unset;
   transition: none;
@@ -1225,6 +1217,49 @@ footer .contact a:hover {
 @media (max-width: 768px) {
   nav {
     padding: 10px 60px;
+  }
+  nav.opened {
+    height: 100vh;
+    align-items: flex-start;
+    transition: none;
+    background: #ffffff;
+  }
+  nav.opened .bars_btn i {
+    color: #4c4c4c;
+  }
+  nav.opened .nav-items {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    gap: 10px;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  nav.opened .nav-items .drobdown {
+    display: none;
+  }
+  nav.opened .nav-items .nav-item .nav-link {
+    color: #4c4c4c;
+    text-align: center;
+  }
+  nav.opened .search-lang {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    left: 0;
+  }
+  nav.opened .search-lang input {
+    left: 58%;
+  }
+  nav.opened .search-lang button {
+    color: #4c4c4c;
+  }
+  nav.opened .search-lang span {
+    background-color: #4c4c4c;
   }
   nav .nav-items {
     display: none;
