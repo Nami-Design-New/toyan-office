@@ -7,19 +7,13 @@ const Nav = ({ services }) => {
   const drop = useRef(null);
   const search = useRef(null);
   const [toggle, setToggle] = useState(false);
+  const [open, setOpen] = useState(false);
   const handlemove = () => {
     drop.current.style.height = "270px";
   };
   const handleLeave = () => {
     drop.current.style.height = "0px";
   };
-  window.addEventListener("scroll", () => {
-    if (window.scrollY >= 100) {
-      nav.current.classList.add("active");
-    } else {
-      nav.current.classList.remove("active");
-    }
-  });
   const handleclick = () => {
     if (toggle === false) {
       search.current.style.width = "150px";
@@ -29,6 +23,22 @@ const Nav = ({ services }) => {
       setToggle(false);
     }
   };
+  const handleToggle = () => {
+    if (open === false) {
+      nav.current.classList.add("opened");
+      setOpen(true);
+    } else {
+      nav.current.classList.remove("opened");
+      setOpen(false);
+    }
+  };
+  window.addEventListener("scroll", () => {
+    if (window.scrollY >= 100) {
+      nav.current.classList.add("active");
+    } else {
+      nav.current.classList.remove("active");
+    }
+  });
   return (
     <nav ref={nav}>
       <div className="logo">
@@ -91,6 +101,9 @@ const Nav = ({ services }) => {
           </NavLink>
         </li>
       </ul>
+      <div className="bars_btn" onClick={handleToggle}>
+        <i className="fas fa-bars" />
+      </div>
       <div className="search-lang">
         <input type="text" placeholder="ابحث عن خدمه" ref={search} />
         <button onClick={handleclick}>

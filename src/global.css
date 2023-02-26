@@ -89,8 +89,20 @@ nav.active .search-lang input::-moz-placeholder {
 nav.active .search-lang input::placeholder {
   color: #4c4c4c;
 }
+nav.active .bars_btn i {
+  color: #4c4c4c;
+}
+nav.opened {
+  height: 100vh;
+  align-items: flex-start;
+  background: #ffffff;
+}
+nav.opened .bars_btn i {
+  color: #4c4c4c;
+}
 nav .logo {
-  height: 100%;
+  height: unset;
+  transition: none;
 }
 nav .logo img {
   height: 100%;
@@ -189,6 +201,18 @@ nav .search-lang span {
   height: 20px;
   width: 1px;
   background-color: #ffffff;
+}
+nav .bars_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  height: 90px;
+}
+nav .bars_btn i {
+  font-size: 17px;
+  cursor: pointer;
+  color: #ffffff;
 }
 
 /******home-start*******/
@@ -1203,6 +1227,15 @@ footer .contact a:hover {
     padding: 10px 60px;
   }
   nav .nav-items {
+    display: none;
+  }
+  nav .bars_btn {
+    display: flex;
+  }
+  nav .bars_btn i {
+    font-size: 24px;
+  }
+  nav .search-lang {
     display: none;
   }
   .about {

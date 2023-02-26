@@ -114,9 +114,21 @@ nav {
         color: $gray2;
       }
     }
+    .bars_btn i {
+      color: $gray2;
+    }
+  }
+  &.opened {
+    height: 100vh;
+    align-items: flex-start;
+    background: $white;
+    .bars_btn i {
+      color: $gray2;
+    }
   }
   .logo {
-    height: 100%;
+    height: unset;
+    transition: none;
     img {
       height: 100%;
     }
@@ -203,6 +215,16 @@ nav {
       height: 20px;
       width: 1px;
       background-color: $white;
+    }
+  }
+  .bars_btn {
+    @include centerFlex();
+    display: none;
+    height: 90px;
+    i {
+      font-size: 17px;
+      cursor: pointer;
+      color: $white;
     }
   }
 }
@@ -1104,6 +1126,15 @@ footer {
     .nav-items {
       display: none;
     }
+    .bars_btn {
+      display: flex;
+      i {
+        font-size: 24px;
+      }
+    }
+    .search-lang {
+      display: none;
+    }
   }
   .about {
     margin-top: 0;
@@ -1214,7 +1245,7 @@ footer {
       gap: 60px;
     }
   }
-  .employ_form form{
+  .employ_form form {
     width: 85%;
   }
   footer {
