@@ -1199,28 +1199,129 @@ footer .contact a:hover {
 }
 
 @media (max-width: 768px) {
+  nav {
+    padding: 10px 60px;
+  }
+  nav .nav-items {
+    display: none;
+  }
   .about {
     margin-top: 0;
+  }
+  .about .about-flex {
+    flex-direction: column-reverse;
+  }
+  .about .wrapper {
+    width: 100%;
+  }
+  .about .description {
+    width: 100%;
+    padding: 0 40px;
+  }
+  .about .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 100px 40px;
+  }
+  .about .about-grid .about-card {
+    height: 100%;
+    padding-bottom: 20px;
+  }
+  .services {
+    padding: 0 40px;
+  }
+  .services .services_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ask_service {
+    padding: 40px 60px;
+    height: 100%;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .ask_service .ask_descrip,
+  .ask_service .ask_form {
+    width: 100%;
+    align-items: self-start;
+  }
+  .clients {
+    padding: 40px;
+  }
+  .contact_header .path_desc {
+    padding: 0 50px;
+  }
+  .news {
+    padding: 100px 40px;
+  }
+  .news .label {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+  .news .label p {
+    text-align: center;
+  }
+  .news form {
+    gap: 5%;
+  }
+  .news form input {
+    width: 65%;
+  }
+  .news form button {
+    width: 30%;
   }
   .map {
     flex-direction: column;
   }
   .map .form {
     width: 100%;
-    padding: 50px 30px;
+    padding: 50px 50px;
   }
   .map .map_layer {
     width: 100%;
     height: 455px;
   }
+  .info {
+    padding: 0 50px;
+    gap: 30px;
+  }
+  .know_header {
+    height: 320px;
+  }
+  .know_header .image {
+    height: 230px;
+  }
+  .know_header .path_desc {
+    height: 90px;
+    padding: 0 50px;
+  }
+  .inner_holder {
+    padding: 80px 50px;
+  }
+  .inner_holder .blogs_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+  }
+  footer {
+    padding: 40px 50px;
+    height: 100%;
+  }
+  footer .footer_grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+  }
+  footer .footer_grid .col {
+    padding: 0;
+  }
+  footer .line {
+    margin: 35px 0;
+  }
+  footer .contact {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
 }
 @media (max-width: 450px) {
-  nav {
-    padding: 10px 30px;
-  }
-  nav .nav-items {
-    display: none;
-  }
   header .swiper .swiper-slide .decription {
     width: 85%;
   }
@@ -1241,12 +1342,6 @@ footer .contact a:hover {
     font-size: 18px;
     line-height: 35px;
   }
-  .about .wrapper {
-    width: 100%;
-  }
-  .about .about-flex {
-    flex-direction: column-reverse;
-  }
   .about .about-grid {
     grid-template-columns: repeat(1, 1fr);
     padding: 40px 25px;
@@ -1258,8 +1353,6 @@ footer .contact a:hover {
     grid-template-columns: repeat(1, 1fr);
   }
   .ask_service {
-    flex-direction: column;
-    height: 100%;
     padding: 25px;
     gap: 40px;
   }
@@ -1428,6 +1521,9 @@ footer .contact a:hover {
   .info .info_card {
     padding-bottom: 10px;
   }
+  .map .form {
+    padding: 50px 30px;
+  }
   .services_container {
     flex-direction: column;
     padding: 60px 25px;
@@ -1435,27 +1531,5 @@ footer .contact a:hover {
   }
   .services_container aside {
     width: 100%;
-  }
-  footer {
-    padding: 30px 25px;
-    height: 100%;
-  }
-  footer .footer_grid {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 40px;
-  }
-  footer .footer_grid p {
-    font-size: 14px;
-  }
-  footer .footer_grid .col {
-    padding: 0;
-  }
-  footer .line {
-    margin: 35px 0;
-  }
-  footer .contact {
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
   }
 }/*# sourceMappingURL=global.css.map */

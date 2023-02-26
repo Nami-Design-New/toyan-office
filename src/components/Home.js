@@ -143,7 +143,7 @@ const Home = ({ slider, services, clients }) => {
             576: {
               slidesPerView: 2
             },
-            768: {
+            800: {
               slidesPerView: 3
             }
           }}
