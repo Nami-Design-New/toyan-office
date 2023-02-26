@@ -921,7 +921,7 @@ header {
 /* *****footer-start*** */
 footer {
   width: 100%;
-  height: 460px;
+  height: 100%;
   background-color: $black;
   padding: 40px 100px;
   .footer_grid {
@@ -1146,11 +1146,6 @@ footer {
   .clients {
     padding: 40px;
   }
-  .contact_header {
-    .path_desc {
-      padding: 0 50px;
-    }
-  }
   .news {
     padding: 100px 40px;
     .label {
@@ -1186,7 +1181,15 @@ footer {
     padding: 0 50px;
     gap: 30px;
   }
-  .know_header {
+  .services_container {
+    padding: 70px 50px;
+    gap: 50px;
+  }
+  .employ_header,
+  .clients_header,
+  .services_header,
+  .know_header,
+  .contact_header {
     height: 320px;
     .image {
       height: 230px;
@@ -1196,12 +1199,23 @@ footer {
       padding: 0 50px;
     }
   }
+  .clients_gird {
+    padding: 80px 50px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .blog_holder {
+    padding: 50px;
+  }
   .inner_holder {
     padding: 80px 50px;
     .blogs_grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 60px;
     }
+  }
+  .employ_form form{
+    width: 85%;
   }
   footer {
     padding: 40px 50px;
