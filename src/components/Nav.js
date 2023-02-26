@@ -1,9 +1,10 @@
 import React, { useRef, useState } from "react";
 import Logo from "../assets/logo.png";
 import { NavLink, Link } from "react-router-dom";
-const Nav = () => {
-  const drop = useRef(null);
+
+const Nav = ({ services }) => {
   const nav = useRef(null);
+  const drop = useRef(null);
   const search = useRef(null);
   const [toggle, setToggle] = useState(false);
   const handlemove = () => {
@@ -43,7 +44,7 @@ const Nav = () => {
         </li>
         <li className="nav-item">
           <NavLink
-            to="/services"
+            to={`/services/`}
             onMouseMove={handlemove}
             onMouseLeave={handleLeave}
             className="icon nav-link"
@@ -57,40 +58,15 @@ const Nav = () => {
             className="drobdown"
           >
             <ul>
-              <li>
-                <Link to="/services">دراسة جدوى اقتصادية</Link>
-              </li>
-              <li>
-                <Link to="/services/legal-advices">استشارات قانونية</Link>
-              </li>
-              <li>
-                <Link to="/services/administrative-advices">
-                  استشارات إدارية
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/business-services">خدمات الأعمال</Link>
-              </li>
-              <li>
-                <Link to="/services/foreign-investments">
-                  الاستثمار الأجنبي
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/investment-opportunities">
-                  الفرص الاستثمارية
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/preperaing-work-plans">
-                  إعداد خطط العمل
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/feasibility-study-for-financing-agencies">
-                  دراسة جدوى للجهات التمويلية
-                </Link>
-              </li>
+              {services.map(ser => {
+                return (
+                  <li key={ser._id}>
+                    <Link to={`/services/${ser.title.en}`}>
+                      {ser.title.ar}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </li>

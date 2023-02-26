@@ -175,6 +175,7 @@ nav {
   .search-lang {
     width: 100px;
     @include centerFlex();
+    justify-content: flex-end;
     gap: 8px;
     position: relative;
     input {
@@ -503,7 +504,7 @@ header {
   .image {
     width: 100%;
     height: 280px;
-    background-size: 100%;
+    background-size: cover;
     background-image: url("assets/service11.jpg");
     background-position: 50% 22%;
   }
@@ -557,7 +558,7 @@ header {
   .image {
     width: 100%;
     height: 280px;
-    background-size: 100%;
+    background-size: cover;
     background-image: url("assets/clients.jpg");
     background-position: 50% 55%;
   }
@@ -625,7 +626,7 @@ header {
   .image {
     width: 100%;
     height: 250px;
-    background-size: 100%;
+    background-size: cover;
     background-image: url("assets/employ.jpg");
     background-position: 50% 25%;
   }
@@ -730,7 +731,7 @@ header {
   .image {
     width: 100%;
     height: 270px;
-    background-size: 100%;
+    background-size: cover;
     background-image: url("assets/news.png");
     background-position: 50% 60%;
   }
@@ -838,7 +839,7 @@ header {
   .image {
     width: 100%;
     height: 270px;
-    background-size: 100%;
+    background-size: cover;
     background-image: url("assets/contact.jpg");
     background-position: 50% 35%;
   }
@@ -1092,9 +1093,25 @@ footer {
   position: relative;
   z-index: 9999999999999;
 }
+@media (max-width: 768px) {
+  .about {
+    margin-top: 0;
+  }
+  .map {
+    flex-direction: column;
+    .form {
+      width: 100%;
+      padding: 50px 30px;
+    }
+    .map_layer {
+      width: 100%;
+      height: 455px;
+    }
+  }
+}
 @media (max-width: 450px) {
   nav {
-    padding: 10px;
+    padding: 10px 30px;
     .nav-items {
       display: none;
     }
@@ -1108,8 +1125,8 @@ footer {
         line-height: 50px;
       }
       p {
-        font-size: 22px;
-        line-height: 45px;
+        font-size: 20px;
+        line-height: 40px;
       }
     }
     .wrapper {
@@ -1136,6 +1153,10 @@ footer {
     .ask_descrip,
     .ask_form {
       width: 100%;
+      ol li {
+        font-size: 18px;
+        margin-top: 0;
+      }
     }
   }
   .clients {
@@ -1168,6 +1189,113 @@ footer {
         width: 35%;
       }
     }
+  }
+  .contact_header {
+    height: 310px;
+    .image {
+      height: 220px;
+    }
+    .path_desc {
+      height: 90px;
+      padding: 0 20px;
+      h2 {
+        line-height: 30px;
+      }
+    }
+  }
+  .know_header {
+    .image {
+      height: 200px;
+    }
+    .path_desc {
+      height: 120px;
+      padding: 0 20px;
+      h2 {
+        line-height: 30px;
+      }
+    }
+  }
+  .inner_holder {
+    padding: 80px 40px;
+    .blogs_grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  .blog_holder {
+    padding: 60px 40px;
+    flex-direction: column-reverse;
+    gap: 40px;
+    .article_img,
+    .article_description {
+      width: 100%;
+    }
+  }
+  .employ_header {
+    height: 320px;
+    .image {
+      height: 200px;
+    }
+    .path_desc {
+      padding: 0 20px;
+      height: 120px;
+      h2 {
+        line-height: 30px;
+      }
+    }
+  }
+  .services_header {
+    height: 320px;
+    .image {
+      height: 200px;
+    }
+    .path_desc {
+      padding: 0 20px;
+      height: 120px;
+      h2 {
+        line-height: 30px;
+      }
+    }
+  }
+  .clients_header {
+    height: 320px;
+    .image {
+      height: 200px;
+    }
+    .path_desc {
+      padding: 0 20px;
+      height: 120px;
+      h2 {
+        line-height: 30px;
+      }
+    }
+  }
+  .clients_gird {
+    padding: 60px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .employ_form {
+    padding: 0 20px;
+    form {
+      width: 100%;
+      .file_feild p {
+        font-size: 14px;
+      }
+    }
+  }
+  .info {
+    height: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0;
+    padding: 0 80px;
+    margin-bottom: 40px;
+    .info_card {
+      padding-bottom: 10px;
+    }
+  }
+  .services_container {
+    flex-direction: column;
+    padding: 60px 40px;
+    gap: 40px;
   }
   footer {
     padding: 40px;

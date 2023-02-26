@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useRef } from "react";
 import AskService from "./AskService";
 import { NavLink } from "react-router-dom";
-const Services = () => {
+const Services = ({ services }) => {
+  const title = useRef(null);
+  // let pathLocation = useParams().name;
+  // if (pathLocation === "feasibility-study") {
+  //   console.log("ok");
+  //   title.current.innerHTML = "دراسة جدوى اقتصادية";
+  // }
   return (
     <React.Fragment>
       <header className="services_header">
@@ -9,46 +15,22 @@ const Services = () => {
         <div className="path_desc">
           <h2>
             <span>خدماتنا/</span>
+            <p ref={title} />
           </h2>
         </div>
       </header>
       <div className="services_container">
         <aside>
           <ul>
-            <li>
-              <NavLink to="/services">دراسة جدوى اقتصادية</NavLink>
-            </li>
-            <li>
-              <NavLink to="/services/legal-advices">استشارات قانونية</NavLink>
-            </li>
-            <li>
-              <NavLink to="/services/administrative-advices">
-                استشارات إدارية
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/services/business-services">خدمات الأعمال</NavLink>
-            </li>
-            <li>
-              <NavLink to="/services/foreign-investments">
-                الاستثمار الأجنبي
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/services/investment-opportunities">
-                الفرص الاستثمارية
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/services/preperaing-work-plans">
-                إعداد خطط العمل
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/services/feasibility-study-for-financing-agencies">
-                دراسة جدوى للجهات التمويلية
-              </NavLink>
-            </li>
+            {services.map(ser => {
+              return (
+                <li key={ser._id}>
+                  <NavLink to={`/services/${ser.title.en}`}>
+                    {ser.title.ar}
+                  </NavLink>
+                </li>
+              );
+            })}
           </ul>
         </aside>
         <main>

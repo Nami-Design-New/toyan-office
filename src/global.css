@@ -153,6 +153,7 @@ nav .search-lang {
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-content: flex-end;
   gap: 8px;
   position: relative;
 }
@@ -505,7 +506,7 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
 .services_header .image {
   width: 100%;
   height: 280px;
-  background-size: 100%;
+  background-size: cover;
   background-image: url("assets/service11.jpg");
   background-position: 50% 22%;
 }
@@ -566,7 +567,7 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
 .clients_header .image {
   width: 100%;
   height: 280px;
-  background-size: 100%;
+  background-size: cover;
   background-image: url("assets/clients.jpg");
   background-position: 50% 55%;
 }
@@ -643,7 +644,7 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
 .employ_header .image {
   width: 100%;
   height: 250px;
-  background-size: 100%;
+  background-size: cover;
   background-image: url("assets/employ.jpg");
   background-position: 50% 25%;
 }
@@ -767,7 +768,7 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
 .know_header .image {
   width: 100%;
   height: 270px;
-  background-size: 100%;
+  background-size: cover;
   background-image: url("assets/news.png");
   background-position: 50% 60%;
 }
@@ -882,7 +883,7 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
 .contact_header .image {
   width: 100%;
   height: 270px;
-  background-size: 100%;
+  background-size: cover;
   background-image: url("assets/contact.jpg");
   background-position: 50% 35%;
 }
@@ -1192,9 +1193,25 @@ footer .contact a:hover {
   z-index: 9999999999999;
 }
 
+@media (max-width: 768px) {
+  .about {
+    margin-top: 0;
+  }
+  .map {
+    flex-direction: column;
+  }
+  .map .form {
+    width: 100%;
+    padding: 50px 30px;
+  }
+  .map .map_layer {
+    width: 100%;
+    height: 455px;
+  }
+}
 @media (max-width: 450px) {
   nav {
-    padding: 10px;
+    padding: 10px 30px;
   }
   nav .nav-items {
     display: none;
@@ -1208,8 +1225,8 @@ footer .contact a:hover {
     line-height: 50px;
   }
   .about .description p {
-    font-size: 22px;
-    line-height: 45px;
+    font-size: 20px;
+    line-height: 40px;
   }
   .about .wrapper {
     width: 100%;
@@ -1235,6 +1252,11 @@ footer .contact a:hover {
   .ask_service .ask_descrip,
   .ask_service .ask_form {
     width: 100%;
+  }
+  .ask_service .ask_descrip ol li,
+  .ask_service .ask_form ol li {
+    font-size: 18px;
+    margin-top: 0;
   }
   .clients {
     padding: 40px 20px;
@@ -1266,6 +1288,111 @@ footer .contact a:hover {
   }
   .news form button {
     width: 35%;
+  }
+  .contact_header {
+    height: 310px;
+  }
+  .contact_header .image {
+    height: 220px;
+  }
+  .contact_header .path_desc {
+    height: 90px;
+    padding: 0 20px;
+  }
+  .contact_header .path_desc h2 {
+    line-height: 30px;
+  }
+  .know_header .image {
+    height: 200px;
+  }
+  .know_header .path_desc {
+    height: 120px;
+    padding: 0 20px;
+  }
+  .know_header .path_desc h2 {
+    line-height: 30px;
+  }
+  .inner_holder {
+    padding: 80px 40px;
+  }
+  .inner_holder .blogs_grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .blog_holder {
+    padding: 60px 40px;
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+  .blog_holder .article_img,
+  .blog_holder .article_description {
+    width: 100%;
+  }
+  .employ_header {
+    height: 320px;
+  }
+  .employ_header .image {
+    height: 200px;
+  }
+  .employ_header .path_desc {
+    padding: 0 20px;
+    height: 120px;
+  }
+  .employ_header .path_desc h2 {
+    line-height: 30px;
+  }
+  .services_header {
+    height: 320px;
+  }
+  .services_header .image {
+    height: 200px;
+  }
+  .services_header .path_desc {
+    padding: 0 20px;
+    height: 120px;
+  }
+  .services_header .path_desc h2 {
+    line-height: 30px;
+  }
+  .clients_header {
+    height: 320px;
+  }
+  .clients_header .image {
+    height: 200px;
+  }
+  .clients_header .path_desc {
+    padding: 0 20px;
+    height: 120px;
+  }
+  .clients_header .path_desc h2 {
+    line-height: 30px;
+  }
+  .clients_gird {
+    padding: 60px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .employ_form {
+    padding: 0 20px;
+  }
+  .employ_form form {
+    width: 100%;
+  }
+  .employ_form form .file_feild p {
+    font-size: 14px;
+  }
+  .info {
+    height: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0;
+    padding: 0 80px;
+    margin-bottom: 40px;
+  }
+  .info .info_card {
+    padding-bottom: 10px;
+  }
+  .services_container {
+    flex-direction: column;
+    padding: 60px 40px;
+    gap: 40px;
   }
   footer {
     padding: 40px;

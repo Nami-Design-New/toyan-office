@@ -24,8 +24,8 @@ const Footer = ({ services }) => {
           <ul>
             {services.map(ser => {
               return (
-                <li>
-                  <Link to={`/services/${ser.title.en}`}>
+                <li key={ser._id}>
+                  <Link to={`/services/${ser.title.en} `}>
                     {ser.title.ar}
                   </Link>
                 </li>
