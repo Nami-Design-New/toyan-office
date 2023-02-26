@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import AskService from "./AskService";
 
 const Clients = ({ clients }) => {
-  console.log(clients);
   const [start, setStart] = useState(0);
   const [stop, setStop] = useState(12);
   const handleClick = () => {

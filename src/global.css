@@ -757,6 +757,11 @@ header .swiper .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagin
 }
 .employ_form form .file_in::-webkit-file-upload-button {
   cursor: pointer;
+  border: none;
+  background-color: #c4c4c4;
+  padding: 6px;
+  color: #000000;
+  font-size: 14px;
 }
 
 /******knowlege-start**/
@@ -1216,17 +1221,25 @@ footer .contact a:hover {
   nav .nav-items {
     display: none;
   }
+  header .swiper .swiper-slide .decription {
+    width: 85%;
+  }
+  .about .about-grid .about-card {
+    height: 100%;
+    padding: 50px 15px 25px 15px;
+  }
   .about .description {
     width: 100%;
-    padding: 0 30px;
+    padding: 0 25px;
     padding-bottom: 40px;
   }
   .about .description h1 {
     line-height: 50px;
+    margin: 15px 0;
   }
   .about .description p {
-    font-size: 20px;
-    line-height: 40px;
+    font-size: 18px;
+    line-height: 35px;
   }
   .about .wrapper {
     width: 100%;
@@ -1236,10 +1249,10 @@ footer .contact a:hover {
   }
   .about .about-grid {
     grid-template-columns: repeat(1, 1fr);
-    padding: 40px;
+    padding: 40px 25px;
   }
   .services {
-    padding: 40px;
+    padding: 40px 25px;
   }
   .services .services_grid {
     grid-template-columns: repeat(1, 1fr);
@@ -1247,7 +1260,8 @@ footer .contact a:hover {
   .ask_service {
     flex-direction: column;
     height: 100%;
-    padding: 30px;
+    padding: 25px;
+    gap: 40px;
   }
   .ask_service .ask_descrip,
   .ask_service .ask_form {
@@ -1255,15 +1269,16 @@ footer .contact a:hover {
   }
   .ask_service .ask_descrip ol li,
   .ask_service .ask_form ol li {
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 0;
+    line-height: 30px;
   }
   .clients {
     padding: 40px 20px;
   }
   .clients .mySwiper {
     width: 100%;
-    padding: 20px 60px;
+    padding: 20px 50px;
   }
   .clients .mySwiper .swiper-button-next::after,
   .clients .mySwiper .swiper-button-prev::after {
@@ -1276,18 +1291,29 @@ footer .contact a:hover {
   .news .label {
     width: 100%;
     height: 100%;
+    padding: 10px;
+    margin-bottom: 30px;
   }
   .news .label p {
     text-align: center;
+    font-size: 18px;
+    line-height: 30px;
   }
   .news form {
-    gap: 5%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
   .news form input {
-    width: 60%;
+    width: 100%;
+    border-radius: 15px;
   }
   .news form button {
-    width: 35%;
+    border-radius: 15px;
+    width: 100%;
+  }
+  .map .form {
+    padding: 50px 20px;
   }
   .contact_header {
     height: 310px;
@@ -1313,19 +1339,31 @@ footer .contact a:hover {
     line-height: 30px;
   }
   .inner_holder {
-    padding: 80px 40px;
+    padding: 80px 25px;
   }
   .inner_holder .blogs_grid {
     grid-template-columns: repeat(1, 1fr);
   }
+  .inner_holder .blogs_grid .blog .laer h4 {
+    font-size: 17px;
+    line-height: 30px;
+  }
   .blog_holder {
-    padding: 60px 40px;
+    padding: 60px 25px;
     flex-direction: column-reverse;
     gap: 40px;
   }
   .blog_holder .article_img,
   .blog_holder .article_description {
     width: 100%;
+  }
+  .blog_holder .article_img article,
+  .blog_holder .article_description article {
+    line-height: 30px;
+  }
+  .blog_holder .article_img h3,
+  .blog_holder .article_description h3 {
+    font-size: 21px;
   }
   .employ_header {
     height: 320px;
@@ -1354,20 +1392,20 @@ footer .contact a:hover {
     line-height: 30px;
   }
   .clients_header {
-    height: 320px;
+    height: 340px;
   }
   .clients_header .image {
     height: 200px;
   }
   .clients_header .path_desc {
     padding: 0 20px;
-    height: 120px;
+    height: 140px;
   }
   .clients_header .path_desc h2 {
     line-height: 30px;
   }
   .clients_gird {
-    padding: 60px;
+    padding: 60px 40px;
     grid-template-columns: repeat(1, 1fr);
   }
   .employ_form {
@@ -1378,6 +1416,7 @@ footer .contact a:hover {
   }
   .employ_form form .file_feild p {
     font-size: 14px;
+    line-height: 16px;
   }
   .info {
     height: 100%;
@@ -1391,16 +1430,22 @@ footer .contact a:hover {
   }
   .services_container {
     flex-direction: column;
-    padding: 60px 40px;
+    padding: 60px 25px;
     gap: 40px;
   }
+  .services_container aside {
+    width: 100%;
+  }
   footer {
-    padding: 40px;
+    padding: 30px 25px;
     height: 100%;
   }
   footer .footer_grid {
     grid-template-columns: repeat(1, 1fr);
     gap: 40px;
+  }
+  footer .footer_grid p {
+    font-size: 14px;
   }
   footer .footer_grid .col {
     padding: 0;

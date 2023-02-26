@@ -718,6 +718,11 @@ header {
       direction: rtl;
       &::-webkit-file-upload-button {
         cursor: pointer;
+        border: none;
+        background-color: $gray1;
+        padding: 6px;
+        color: $black;
+        font-size: 14px;
       }
     }
   }
@@ -1116,17 +1121,25 @@ footer {
       display: none;
     }
   }
+  header .swiper .swiper-slide .decription {
+    width: 85%;
+  }
   .about {
+    .about-grid .about-card {
+      height: 100%;
+      padding: 50px 15px 25px 15px;
+    }
     .description {
       width: 100%;
-      padding: 0 30px;
+      padding: 0 25px;
       padding-bottom: 40px;
       h1 {
         line-height: 50px;
+        margin: 15px 0;
       }
       p {
-        font-size: 20px;
-        line-height: 40px;
+        font-size: 18px;
+        line-height: 35px;
       }
     }
     .wrapper {
@@ -1137,11 +1150,11 @@ footer {
     }
     .about-grid {
       grid-template-columns: repeat(1, 1fr);
-      padding: 40px;
+      padding: 40px 25px;
     }
   }
   .services {
-    padding: 40px;
+    padding: 40px 25px;
     .services_grid {
       grid-template-columns: repeat(1, 1fr);
     }
@@ -1149,13 +1162,15 @@ footer {
   .ask_service {
     flex-direction: column;
     height: 100%;
-    padding: 30px;
+    padding: 25px;
+    gap: 40px;
     .ask_descrip,
     .ask_form {
       width: 100%;
       ol li {
-        font-size: 18px;
+        font-size: 16px;
         margin-top: 0;
+        line-height: 30px;
       }
     }
   }
@@ -1163,7 +1178,7 @@ footer {
     padding: 40px 20px;
     .mySwiper {
       width: 100%;
-      padding: 20px 60px;
+      padding: 20px 50px;
       .swiper-button-next::after,
       .swiper-button-prev::after {
         font-size: 26px;
@@ -1176,18 +1191,31 @@ footer {
     .label {
       width: 100%;
       height: 100%;
+      padding: 10px;
+      margin-bottom: 30px;
       p {
         text-align: center;
+        font-size: 18px;
+        line-height: 30px;
       }
     }
     form {
-      gap: 5%;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
       input {
-        width: 60%;
+        width: 100%;
+        border-radius: 15px;
       }
       button {
-        width: 35%;
+        border-radius: 15px;
+        width: 100%;
       }
+    }
+  }
+  .map {
+    .form {
+      padding: 50px 20px;
     }
   }
   .contact_header {
@@ -1216,18 +1244,28 @@ footer {
     }
   }
   .inner_holder {
-    padding: 80px 40px;
+    padding: 80px 25px;
     .blogs_grid {
       grid-template-columns: repeat(1, 1fr);
+      .blog .laer h4 {
+        font-size: 17px;
+        line-height: 30px;
+      }
     }
   }
   .blog_holder {
-    padding: 60px 40px;
+    padding: 60px 25px;
     flex-direction: column-reverse;
     gap: 40px;
     .article_img,
     .article_description {
       width: 100%;
+      article {
+        line-height: 30px;
+      }
+      h3 {
+        font-size: 21px;
+      }
     }
   }
   .employ_header {
@@ -1257,20 +1295,20 @@ footer {
     }
   }
   .clients_header {
-    height: 320px;
+    height: 340px;
     .image {
       height: 200px;
     }
     .path_desc {
       padding: 0 20px;
-      height: 120px;
+      height: 140px;
       h2 {
         line-height: 30px;
       }
     }
   }
   .clients_gird {
-    padding: 60px;
+    padding: 60px 40px;
     grid-template-columns: repeat(1, 1fr);
   }
   .employ_form {
@@ -1279,6 +1317,7 @@ footer {
       width: 100%;
       .file_feild p {
         font-size: 14px;
+        line-height: 16px;
       }
     }
   }
@@ -1294,15 +1333,21 @@ footer {
   }
   .services_container {
     flex-direction: column;
-    padding: 60px 40px;
+    padding: 60px 25px;
     gap: 40px;
+    aside {
+      width: 100%;
+    }
   }
   footer {
-    padding: 40px;
+    padding: 30px 25px;
     height: 100%;
     .footer_grid {
       grid-template-columns: repeat(1, 1fr);
       gap: 40px;
+      p {
+        font-size: 14px;
+      }
       .col {
         padding: 0;
       }
