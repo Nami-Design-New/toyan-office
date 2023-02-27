@@ -47,7 +47,7 @@ const App = () => {
   }, []);
   setTimeout(() => {
     loadr.current.style.display = "none";
-  }, 4500);
+  }, 4700);
   return (
     <div className="App">
       <div ref={loadr} className="loader">
