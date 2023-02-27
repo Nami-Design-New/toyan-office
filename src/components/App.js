@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Nav from "./Nav";
 import axios from "axios";
 import Home from "./Home";
@@ -9,6 +9,7 @@ import Knowlege from "./Knowlege";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import Article from "./Article";
+import loader from "../assets/loader.gif";
 import { ToastContainer } from "react-toastify";
 import { Routes, Route } from "react-router-dom";
 
@@ -16,6 +17,7 @@ const App = () => {
   const [header, setHeader] = useState([]);
   const [clients, setClients] = useState([]);
   const [services, setServices] = useState([]);
+  const loadr = useRef(null);
   useEffect(() => {
     const clientsFetch = async () => {
       let { data } = await axios.get(
@@ -43,8 +45,14 @@ const App = () => {
     };
     servicesFetch();
   }, []);
+  setTimeout(() => {
+    loadr.current.style.display = "none";
+  }, 4500);
   return (
     <div className="App">
+      <div ref={loadr} className="loader">
+        <img src={loader} alt="loader" />
+      </div>
       <ToastContainer position="top-right" rtl={true} />
       <Nav services={services} />
       <div className="app-holder">
